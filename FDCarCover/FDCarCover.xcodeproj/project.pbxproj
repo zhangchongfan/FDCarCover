@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5975C37A20176A2C0035E564 /* FDDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975C37920176A2C0035E564 /* FDDataHandle.swift */; };
+		59F719E12014B3E20050DB1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F719DF2014B3E20050DB1F /* LoginViewController.swift */; };
+		59F719E22014B3E20050DB1F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F719E02014B3E20050DB1F /* LoginViewController.xib */; };
+		59F719E52014C3CA0050DB1F /* FDAcountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */; };
+		67080C8F200E12C400BBEFDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080C8E200E12C400BBEFDF /* AppDelegate.swift */; };
+		67080C94200E12C400BBEFDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67080C92200E12C400BBEFDF /* Main.storyboard */; };
+		67080C96200E12C400BBEFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67080C95200E12C400BBEFDF /* Assets.xcassets */; };
+		67080C99200E12C400BBEFDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67080C97200E12C400BBEFDF /* LaunchScreen.storyboard */; };
+		67080CA4200E132300BBEFDF /* FDBleManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CA2200E132300BBEFDF /* FDBleManage.swift */; };
+		67080CA5200E132300BBEFDF /* FDPeripherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CA3200E132300BBEFDF /* FDPeripherModel.swift */; };
+		67080CA9200E137500BBEFDF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CA7200E137500BBEFDF /* MainViewController.swift */; };
+		67080CAA200E137500BBEFDF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67080CA8200E137500BBEFDF /* MainViewController.xib */; };
+		67080CB520117C8900BBEFDF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CB420117C8900BBEFDF /* MapViewController.swift */; };
+		67080CB820117CDA00BBEFDF /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CB720117CDA00BBEFDF /* MapRouteView.swift */; };
+		67080CBC20118A1E00BBEFDF /* ZCUIView+setRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CBB20118A1E00BBEFDF /* ZCUIView+setRect.swift */; };
+		67080CC120119AA200BBEFDF /* VPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67080CC020119AA200BBEFDF /* VPLocationManager.m */; };
+		67080CC42011C13600BBEFDF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 67080CC32011C13600BBEFDF /* MBProgressHUD.m */; };
+		67080CC72011D9E300BBEFDF /* FDBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CC62011D9E300BBEFDF /* FDBaseNavigationController.swift */; };
+		67080CC92011E2C100BBEFDF /* FDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CC82011E2C100BBEFDF /* FDConstants.swift */; };
+		67080CCC2011E66900BBEFDF /* VPLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67080CCB2011E66900BBEFDF /* VPLocationConverter.m */; };
+		677B725020132D2C00AB1371 /* MapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 677B724F20132D2C00AB1371 /* MapTool.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5975C37920176A2C0035E564 /* FDDataHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDDataHandle.swift; sourceTree = "<group>"; };
+		59F719DF2014B3E20050DB1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		59F719E02014B3E20050DB1F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAcountInfo.swift; sourceTree = "<group>"; };
+		67080C8B200E12C400BBEFDF /* FDCarCover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDCarCover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67080C8E200E12C400BBEFDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67080C93200E12C400BBEFDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67080C95200E12C400BBEFDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67080C98200E12C400BBEFDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67080C9A200E12C400BBEFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67080CA2200E132300BBEFDF /* FDBleManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDBleManage.swift; sourceTree = "<group>"; };
+		67080CA3200E132300BBEFDF /* FDPeripherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDPeripherModel.swift; sourceTree = "<group>"; };
+		67080CA7200E137500BBEFDF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		67080CA8200E137500BBEFDF /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		67080CB420117C8900BBEFDF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		67080CB720117CDA00BBEFDF /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
+		67080CBB20118A1E00BBEFDF /* ZCUIView+setRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZCUIView+setRect.swift"; sourceTree = "<group>"; };
+		67080CBE20119A9F00BBEFDF /* FDCarCover-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDCarCover-Bridging-Header.h"; sourceTree = "<group>"; };
+		67080CBF20119AA100BBEFDF /* VPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLocationManager.h; sourceTree = "<group>"; };
+		67080CC020119AA200BBEFDF /* VPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLocationManager.m; sourceTree = "<group>"; };
+		67080CC22011C13600BBEFDF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		67080CC32011C13600BBEFDF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		67080CC62011D9E300BBEFDF /* FDBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDBaseNavigationController.swift; sourceTree = "<group>"; };
+		67080CC82011E2C100BBEFDF /* FDConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDConstants.swift; sourceTree = "<group>"; };
+		67080CCA2011E66900BBEFDF /* VPLocationConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLocationConverter.h; sourceTree = "<group>"; };
+		67080CCB2011E66900BBEFDF /* VPLocationConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLocationConverter.m; sourceTree = "<group>"; };
+		677B724E20132D2C00AB1371 /* MapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTool.h; sourceTree = "<group>"; };
+		677B724F20132D2C00AB1371 /* MapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTool.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67080C88200E12C400BBEFDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59F719E32014C39D0050DB1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		67080C82200E12C400BBEFDF = {
+			isa = PBXGroup;
+			children = (
+				67080C8D200E12C400BBEFDF /* FDCarCover */,
+				67080C8C200E12C400BBEFDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67080C8C200E12C400BBEFDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67080C8B200E12C400BBEFDF /* FDCarCover.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67080C8D200E12C400BBEFDF /* FDCarCover */ = {
+			isa = PBXGroup;
+			children = (
+				67080CA0200E12CF00BBEFDF /* Class */,
+				67080C92200E12C400BBEFDF /* Main.storyboard */,
+				67080C95200E12C400BBEFDF /* Assets.xcassets */,
+				67080C97200E12C400BBEFDF /* LaunchScreen.storyboard */,
+				67080C9A200E12C400BBEFDF /* Info.plist */,
+			);
+			path = FDCarCover;
+			sourceTree = "<group>";
+		};
+		67080CA0200E12CF00BBEFDF /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				59F719E32014C39D0050DB1F /* Models */,
+				67080CC52011D96800BBEFDF /* BaseControllers */,
+				67080CBD20119A8000BBEFDF /* OCTools */,
+				67080CBA201189DC00BBEFDF /* Expend */,
+				67080CB620117CBD00BBEFDF /* Views */,
+				67080CAB200E138B00BBEFDF /* SupportFile */,
+				67080CA6200E134C00BBEFDF /* Controllers */,
+				67080CA1200E131100BBEFDF /* FDBlueManager */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		67080CA1200E131100BBEFDF /* FDBlueManager */ = {
+			isa = PBXGroup;
+			children = (
+				67080CA2200E132300BBEFDF /* FDBleManage.swift */,
+				67080CA3200E132300BBEFDF /* FDPeripherModel.swift */,
+				5975C37920176A2C0035E564 /* FDDataHandle.swift */,
+			);
+			path = FDBlueManager;
+			sourceTree = "<group>";
+		};
+		67080CA6200E134C00BBEFDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67080CA7200E137500BBEFDF /* MainViewController.swift */,
+				67080CA8200E137500BBEFDF /* MainViewController.xib */,
+				67080CB420117C8900BBEFDF /* MapViewController.swift */,
+				59F719DF2014B3E20050DB1F /* LoginViewController.swift */,
+				59F719E02014B3E20050DB1F /* LoginViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		67080CAB200E138B00BBEFDF /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				67080C8E200E12C400BBEFDF /* AppDelegate.swift */,
+				67080CC82011E2C100BBEFDF /* FDConstants.swift */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		67080CB620117CBD00BBEFDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67080CB720117CDA00BBEFDF /* MapRouteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		67080CBA201189DC00BBEFDF /* Expend */ = {
+			isa = PBXGroup;
+			children = (
+				67080CBB20118A1E00BBEFDF /* ZCUIView+setRect.swift */,
+			);
+			path = Expend;
+			sourceTree = "<group>";
+		};
+		67080CBD20119A8000BBEFDF /* OCTools */ = {
+			isa = PBXGroup;
+			children = (
+				677B724E20132D2C00AB1371 /* MapTool.h */,
+				677B724F20132D2C00AB1371 /* MapTool.m */,
+				67080CCA2011E66900BBEFDF /* VPLocationConverter.h */,
+				67080CCB2011E66900BBEFDF /* VPLocationConverter.m */,
+				67080CC22011C13600BBEFDF /* MBProgressHUD.h */,
+				67080CC32011C13600BBEFDF /* MBProgressHUD.m */,
+				67080CBF20119AA100BBEFDF /* VPLocationManager.h */,
+				67080CC020119AA200BBEFDF /* VPLocationManager.m */,
+				67080CBE20119A9F00BBEFDF /* FDCarCover-Bridging-Header.h */,
+			);
+			path = OCTools;
+			sourceTree = "<group>";
+		};
+		67080CC52011D96800BBEFDF /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				67080CC62011D9E300BBEFDF /* FDBaseNavigationController.swift */,
+			);
+			path = BaseControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67080C8A200E12C400BBEFDF /* FDCarCover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67080C9D200E12C400BBEFDF /* Build configuration list for PBXNativeTarget "FDCarCover" */;
+			buildPhases = (
+				67080C87200E12C400BBEFDF /* Sources */,
+				67080C88200E12C400BBEFDF /* Frameworks */,
+				67080C89200E12C400BBEFDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FDCarCover;
+			productName = FDCarCover;
+			productReference = 67080C8B200E12C400BBEFDF /* FDCarCover.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67080C83200E12C400BBEFDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = zhangchong;
+				TargetAttributes = {
+					67080C8A200E12C400BBEFDF = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 67080C86200E12C400BBEFDF /* Build configuration list for PBXProject "FDCarCover" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67080C82200E12C400BBEFDF;
+			productRefGroup = 67080C8C200E12C400BBEFDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67080C8A200E12C400BBEFDF /* FDCarCover */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67080C89200E12C400BBEFDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F719E22014B3E20050DB1F /* LoginViewController.xib in Resources */,
+				67080C99200E12C400BBEFDF /* LaunchScreen.storyboard in Resources */,
+				67080C96200E12C400BBEFDF /* Assets.xcassets in Resources */,
+				67080C94200E12C400BBEFDF /* Main.storyboard in Resources */,
+				67080CAA200E137500BBEFDF /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67080C87200E12C400BBEFDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59F719E12014B3E20050DB1F /* LoginViewController.swift in Sources */,
+				67080CC120119AA200BBEFDF /* VPLocationManager.m in Sources */,
+				67080CA4200E132300BBEFDF /* FDBleManage.swift in Sources */,
+				67080CB820117CDA00BBEFDF /* MapRouteView.swift in Sources */,
+				67080CBC20118A1E00BBEFDF /* ZCUIView+setRect.swift in Sources */,
+				67080CC72011D9E300BBEFDF /* FDBaseNavigationController.swift in Sources */,
+				67080CC42011C13600BBEFDF /* MBProgressHUD.m in Sources */,
+				67080CA5200E132300BBEFDF /* FDPeripherModel.swift in Sources */,
+				67080CCC2011E66900BBEFDF /* VPLocationConverter.m in Sources */,
+				59F719E52014C3CA0050DB1F /* FDAcountInfo.swift in Sources */,
+				67080C8F200E12C400BBEFDF /* AppDelegate.swift in Sources */,
+				67080CC92011E2C100BBEFDF /* FDConstants.swift in Sources */,
+				677B725020132D2C00AB1371 /* MapTool.m in Sources */,
+				5975C37A20176A2C0035E564 /* FDDataHandle.swift in Sources */,
+				67080CB520117C8900BBEFDF /* MapViewController.swift in Sources */,
+				67080CA9200E137500BBEFDF /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		67080C92200E12C400BBEFDF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67080C93200E12C400BBEFDF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67080C97200E12C400BBEFDF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67080C98200E12C400BBEFDF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67080C9B200E12C400BBEFDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67080C9C200E12C400BBEFDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67080C9E200E12C400BBEFDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4E8S34J8UT;
+				INFOPLIST_FILE = FDCarCover/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.veepoo.FDCarCover;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FDCarCover/Class/OCTools/FDCarCover-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67080C9F200E12C400BBEFDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4E8S34J8UT;
+				INFOPLIST_FILE = FDCarCover/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.veepoo.FDCarCover;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FDCarCover/Class/OCTools/FDCarCover-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67080C86200E12C400BBEFDF /* Build configuration list for PBXProject "FDCarCover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67080C9B200E12C400BBEFDF /* Debug */,
+				67080C9C200E12C400BBEFDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67080C9D200E12C400BBEFDF /* Build configuration list for PBXNativeTarget "FDCarCover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67080C9E200E12C400BBEFDF /* Debug */,
+				67080C9F200E12C400BBEFDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67080C83200E12C400BBEFDF /* Project object */;
+}
