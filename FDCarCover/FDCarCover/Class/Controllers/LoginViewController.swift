@@ -49,11 +49,11 @@ class LoginViewController: UIViewController {
     @IBAction func registAction(_ sender: UIButton) {
         if accountAndPasswordFormatCorrect() {
             if equalLastLoginAccount(account: accountTextField.text!) {//如果是上次的账号
-                MBProgressHUD.fd_show(withText: "账号已经被注册", mode: .text, add: view)
+                MBProgressHUD.fd_show(withText: "賬號已經被註冊", mode: .text, add: view)
                 return
             }
             
-            let alertView = UIAlertView(title: "提示", message: "是否确认注册？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确认")
+            let alertView = UIAlertView(title: "提示", message: "是否確認註冊？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "確認")
             alertView.show()
         }
     }
@@ -61,11 +61,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         if accountAndPasswordFormatCorrect() {
             if !equalLastLoginAccount(account: accountTextField.text!) {//如果不是上次的账号
-                MBProgressHUD.fd_show(withText: "账号不正确", mode: .text, add: view)
+                MBProgressHUD.fd_show(withText: "賬號不正確", mode: .text, add: view)
                 return
             }
             if !equalLastLoginPassword(password: pwdTextField.text!) {//如果不是上次的密码
-                MBProgressHUD.fd_show(withText: "密码不正确", mode: .text, add: view)
+                MBProgressHUD.fd_show(withText: "密碼不正確", mode: .text, add: view)
                 return
             }
             registAndLoginSuccess()
@@ -75,19 +75,19 @@ class LoginViewController: UIViewController {
     func accountAndPasswordFormatCorrect() -> Bool {
         
         if accountTextField.text?.count == 0 {
-            MBProgressHUD.fd_show(withText: "请输入账号", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "請輸入賬號", mode: .text, add: view)
             accountTextField.becomeFirstResponder()
             return false
         }
         
-        if !(accountTextField.text?.count == 9 || accountTextField.text?.count == 11) {
-            MBProgressHUD.fd_show(withText: "账号格式不正确", mode: .text, add: view)
+        if !((accountTextField.text?.count)! >= 4 || (accountTextField.text?.count)! <= 11) {
+            MBProgressHUD.fd_show(withText: "賬號格式不正確", mode: .text, add: view)
             accountTextField.becomeFirstResponder()
             return false
         }
         
         if pwdTextField.text?.count == 0 {
-            MBProgressHUD.fd_show(withText: "请输入密码", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "請輸入密碼", mode: .text, add: view)
             pwdTextField.becomeFirstResponder()
             return false
         }

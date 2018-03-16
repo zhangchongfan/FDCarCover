@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     
     @objc func signOutAction(_ sender: UIButton) {
         if bleManager.connected {
-            MBProgressHUD.fd_show(withText: "请先解绑设备", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "請先解綁設備", mode: .text, add: view)
             return
         }
         UserDefaults.standard.removeObject(forKey: FDLastAutoLogin)
@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
     @IBAction func choiceDeviceOrDisconnect(_ sender: UIButton) {
         if bleManager.connected {
             bleManager.disconnectPeripheral()
-            MBProgressHUD.fd_show(withText: "设备已解绑", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "設備已解綁", mode: .text, add: view)
         } else {
             scanDevice()
             deviceBackView.isHidden = false
@@ -89,7 +89,7 @@ class MainViewController: UIViewController {
     
     @IBAction func operationAction(_ sender: UIButton) {
         if !bleManager.connected {//未连接
-            MBProgressHUD.fd_show(withText: "设备未连接", mode: .text, add: view).hide(true, afterDelay: 1.0)
+            MBProgressHUD.fd_show(withText: "設備未連接", mode: .text, add: view).hide(true, afterDelay: 1.0)
             return
         }
         let cmd: [UInt8] = [0xA1, UInt8(sender.tag)]
@@ -109,7 +109,7 @@ class MainViewController: UIViewController {
     @IBAction func seekCar(_ sender: UIButton) {
         let locationDict:[String:Double]? = UserDefaults.standard.value(forKey: FDLastLocation) as? [String : Double]
         if locationDict == nil {
-            MBProgressHUD.fd_show(withText: "没有停车记录", mode: .text, add: view).hide(true, afterDelay: 1.0)
+            MBProgressHUD.fd_show(withText: "沒有停車記錄", mode: .text, add: view).hide(true, afterDelay: 1.0)
             return
         }
         
@@ -208,8 +208,8 @@ class MainViewController: UIViewController {
     func connected() {
         hideListView(UIButton())
         selectDeviceBtn.isSelected = true
-        tipLabel.text = (bleManager.connectPeripherModel?.name)! + "已绑定"
-        MBProgressHUD.fd_show(withText: "已绑定设备", mode: .text, add: view)
+        tipLabel.text = (bleManager.connectPeripherModel?.name)! + "已綁定"
+        MBProgressHUD.fd_show(withText: "已綁定設備", mode: .text, add: view)
         //先要发送一条校验的账号,账号和密码
         let verifyData: Data = FDDataHandle.verifyAccountAndPasswordData()
         bleManager.writeValue(data: verifyData)
@@ -217,7 +217,7 @@ class MainViewController: UIViewController {
     
     func disconnected() {
         selectDeviceBtn.isSelected = false
-        tipLabel.text = "设备未绑定"
+        tipLabel.text = "設備未綁定"
         for btn in operationBtns {
             btn.isSelected = false
         }
@@ -232,14 +232,14 @@ class MainViewController: UIViewController {
     
     func verifyFailure() {//账号和密码校准失败
         bleManager.disconnectPeripheral()
-        let alertView = UIAlertView(title: "提示", message: "账号验证失败，是否重新注册账号？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+        let alertView = UIAlertView(title: "提示", message: "賬號驗證失敗，是否重新註冊賬號？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "確定")
         alertView.tag = 1
         alertView.show()
     }
     
     func deviceUnpair() {//设备解除绑定
         bleManager.disconnectPeripheral()
-        let alertView = UIAlertView(title: "提示", message: "主机已解除绑定，您需要重新注册账号", delegate: self, cancelButtonTitle: "我知道了")
+        let alertView = UIAlertView(title: "提示", message: "主機已解除綁定，您需要重新註冊賬號", delegate: self, cancelButtonTitle: "我知道了")
         alertView.tag = 2
         alertView.show()
     }
@@ -247,7 +247,7 @@ class MainViewController: UIViewController {
     func getCurrentLocation() {
         UserDefaults.standard.removeObject(forKey: FDLastLocation)
         if locationManager.locationIsDenied() {
-            let alertView = UIAlertView(title: "提示", message: "GPS定位权限未打开,无法获取您的停车位置,是否前往设置?", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "前往")
+            let alertView = UIAlertView(title: "提示", message: "GPS定位權限未打開,無法獲取您的停車位置,是否前往設置?", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "前往")
             alertView.tag = 0
             alertView.show()
             return

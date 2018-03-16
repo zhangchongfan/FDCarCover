@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未绑定设备" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-VH-bHh">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未綁定設備" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-VH-bHh">
                     <rect key="frame" x="0.0" y="30" width="320" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="BH6-pB-v3v"/>
@@ -43,7 +43,7 @@
                     <subviews>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-rD-xHJ">
                             <rect key="frame" x="85" y="102" width="150" height="45"/>
-                            <state key="normal" title="暂停" backgroundImage="btn_image">
+                            <state key="normal" title="暫停" backgroundImage="btn_image">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" backgroundImage="btn_select_image"/>
@@ -53,7 +53,7 @@
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-8j-Gcn">
                             <rect key="frame" x="85" y="56" width="150" height="45"/>
-                            <state key="normal" title="收车罩" backgroundImage="btn_image"/>
+                            <state key="normal" title="收車罩" backgroundImage="btn_image"/>
                             <state key="selected" backgroundImage="btn_select_image"/>
                             <connections>
                                 <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="ctg-yR-uMP"/>
@@ -65,7 +65,7 @@
                                 <constraint firstAttribute="height" constant="45" id="IvM-5s-wsN"/>
                                 <constraint firstAttribute="width" constant="150" id="RSU-2b-hfe"/>
                             </constraints>
-                            <state key="normal" title="放车罩" backgroundImage="btn_image"/>
+                            <state key="normal" title="放車罩" backgroundImage="btn_image"/>
                             <state key="selected" title="放车罩" backgroundImage="btn_select_image"/>
                             <connections>
                                 <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="wgH-aI-3tl"/>
@@ -83,7 +83,7 @@
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHU-tS-e2p">
                             <rect key="frame" x="85" y="278" width="150" height="45"/>
-                            <state key="normal" title="寻车" backgroundImage="btn_image">
+                            <state key="normal" title="尋車" backgroundImage="btn_image">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" backgroundImage="btn_select_image"/>
@@ -136,10 +136,10 @@
                         <constraint firstAttribute="height" constant="50" id="mAt-l8-gcc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="绑定设备" backgroundImage="btn_image">
+                    <state key="normal" title="綁定設備" backgroundImage="btn_image1">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" title="解除绑定" backgroundImage="btn_select_image"/>
+                    <state key="selected" title="解除綁定" backgroundImage="btn_select_image1"/>
                     <connections>
                         <action selector="choiceDeviceOrDisconnect:" destination="-1" eventType="touchUpInside" id="VLo-mE-9ZC"/>
                     </connections>
@@ -150,7 +150,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-iO-t0m">
                             <rect key="frame" x="30" y="84" width="260" height="400"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择设备" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcM-30-lfV">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請選擇設備" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcM-30-lfV" userLabel="請選擇設備">
                                     <rect key="frame" x="5" y="0.0" width="250" height="45"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -223,7 +223,9 @@
         </view>
     </objects>
     <resources>
-        <image name="btn_image" width="402" height="74"/>
-        <image name="btn_select_image" width="414" height="72"/>
+        <image name="btn_image" width="250" height="75"/>
+        <image name="btn_image1" width="402" height="74"/>
+        <image name="btn_select_image" width="250" height="75"/>
+        <image name="btn_select_image1" width="414" height="72"/>
     </resources>
 </document>

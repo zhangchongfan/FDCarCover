@@ -42,7 +42,7 @@ class MapViewController: UIViewController {
         let routeBtn = UIButton(type: .custom)
         routeBtn.frame = CGRect(x: 0, y: view.zc_height - 50, width: view.zc_width, height: 50)
         routeBtn.backgroundColor = AppColor
-        routeBtn.setTitle("规划路线", for: .normal)
+        routeBtn.setTitle("規劃路線", for: .normal)
         routeBtn.addTarget(self, action: #selector(routeBtnAction), for: .touchUpInside)
         view.addSubview(routeBtn)
         
@@ -62,16 +62,16 @@ class MapViewController: UIViewController {
     
     @objc func routeBtnAction() {
         if mapRouteView?.loadFinish == false {
-            MBProgressHUD.fd_show(withText: "地图正在加载中，请等待片刻!", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "地圖正在加載中，請等待片刻!", mode: .text, add: view)
             return
         }
-        let sheet = UIActionSheet(title: "请选择寻车方式", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "步行", otherButtonTitles: "驾车")
+        let sheet = UIActionSheet(title: "請選擇尋車方式", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "步行", otherButtonTitles: "駕車")
         sheet.show(in: view)
     }
 
     @objc func backUserBtnAction() {
         if mapRouteView?.loadFinish == false {
-            MBProgressHUD.fd_show(withText: "地图正在加载中，请等待片刻!", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "地圖正在加載中，請等待片刻!", mode: .text, add: view)
             return
         }
         mapRouteView?.followUserLocation()

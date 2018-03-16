@@ -278,7 +278,7 @@ extension FDBleManage: CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         if error != nil {
-            print("发送数据失败")
+            print("發送數據失敗")
         }
     }
     
