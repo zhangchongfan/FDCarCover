@@ -29,121 +29,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未綁定設備" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-VH-bHh">
-                    <rect key="frame" x="0.0" y="30" width="320" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="BH6-pB-v3v"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="0.25882352939999997" green="0.52941176469999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0t-kH-SAf" userLabel="OperationView">
-                    <rect key="frame" x="0.0" y="94" width="320" height="380"/>
-                    <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-rD-xHJ">
-                            <rect key="frame" x="85" y="102" width="150" height="45"/>
-                            <state key="normal" title="暫停" backgroundImage="btn_image">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" backgroundImage="btn_select_image"/>
-                            <connections>
-                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="JUY-dP-zy0"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-8j-Gcn">
-                            <rect key="frame" x="85" y="56" width="150" height="45"/>
-                            <state key="normal" title="收車罩" backgroundImage="btn_image"/>
-                            <state key="selected" backgroundImage="btn_select_image"/>
-                            <connections>
-                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="ctg-yR-uMP"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-n5-HAj">
-                            <rect key="frame" x="85" y="10" width="150" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="IvM-5s-wsN"/>
-                                <constraint firstAttribute="width" constant="150" id="RSU-2b-hfe"/>
-                            </constraints>
-                            <state key="normal" title="放車罩" backgroundImage="btn_image"/>
-                            <state key="selected" title="放车罩" backgroundImage="btn_select_image"/>
-                            <connections>
-                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="wgH-aI-3tl"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8T-Yi-Agf">
-                            <rect key="frame" x="85" y="148" width="150" height="45"/>
-                            <state key="normal" title="下降" backgroundImage="btn_image">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" backgroundImage="btn_select_image"/>
-                            <connections>
-                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="eLh-CV-Xur"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHU-tS-e2p">
-                            <rect key="frame" x="85" y="278" width="150" height="45"/>
-                            <state key="normal" title="尋車" backgroundImage="btn_image">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" backgroundImage="btn_select_image"/>
-                            <connections>
-                                <action selector="seekCar:" destination="-1" eventType="touchUpInside" id="5Ev-z3-A1C"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFs-en-oBq">
-                            <rect key="frame" x="85" y="213" width="150" height="45"/>
-                            <state key="normal" title="角度" backgroundImage="btn_image">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" backgroundImage="btn_select_image"/>
-                            <connections>
-                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="krY-Ve-8pn"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="trailing" secondItem="Yco-8j-Gcn" secondAttribute="trailing" id="4C7-9a-PI3"/>
-                        <constraint firstItem="DHU-tS-e2p" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="5Qk-BB-gwD"/>
-                        <constraint firstAttribute="height" constant="380" id="97w-jW-7Pi"/>
-                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="Gbp-yp-7U0"/>
-                        <constraint firstItem="fFs-en-oBq" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="Jp2-sv-z2i"/>
-                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="top" secondItem="Yco-8j-Gcn" secondAttribute="bottom" constant="1" id="KLB-XM-lKA"/>
-                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="top" secondItem="YBd-n5-HAj" secondAttribute="bottom" constant="1" id="KZ3-kQ-ueT"/>
-                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="top" secondItem="Dwl-rD-xHJ" secondAttribute="bottom" constant="1" id="MHv-2o-ThL"/>
-                        <constraint firstItem="fFs-en-oBq" firstAttribute="top" secondItem="h8T-Yi-Agf" secondAttribute="bottom" constant="20" id="Mau-cC-RNO"/>
-                        <constraint firstItem="DHU-tS-e2p" firstAttribute="top" secondItem="fFs-en-oBq" secondAttribute="bottom" constant="20" id="O81-mn-QzH"/>
-                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="PSy-5D-ngr"/>
-                        <constraint firstItem="DHU-tS-e2p" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="ToU-Kj-TKs"/>
-                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="WHz-9V-lON"/>
-                        <constraint firstItem="fFs-en-oBq" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="asA-iY-onk"/>
-                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="dGc-2x-8Vt"/>
-                        <constraint firstItem="fFs-en-oBq" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="fBY-G9-PJ7"/>
-                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="fuF-Yf-hHZ"/>
-                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="sMA-Ht-x3G"/>
-                        <constraint firstItem="YBd-n5-HAj" firstAttribute="top" secondItem="q0t-kH-SAf" secondAttribute="top" constant="10" id="seg-Xu-UWb"/>
-                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="tRb-Dg-6AV"/>
-                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="vOq-ro-yzR"/>
-                        <constraint firstItem="YBd-n5-HAj" firstAttribute="centerX" secondItem="q0t-kH-SAf" secondAttribute="centerX" id="vTP-yZ-13H"/>
-                        <constraint firstItem="DHU-tS-e2p" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="vcK-ve-idc"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfs-8f-Uc7">
-                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                    <color key="backgroundColor" red="0.2666666667" green="0.6705882353" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="mAt-l8-gcc"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="綁定設備" backgroundImage="btn_image1">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" title="解除綁定" backgroundImage="btn_select_image1"/>
-                    <connections>
-                        <action selector="choiceDeviceOrDisconnect:" destination="-1" eventType="touchUpInside" id="VLo-mE-9ZC"/>
-                    </connections>
-                </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mE3-O4-Xhb">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
@@ -202,6 +87,143 @@
                         <constraint firstAttribute="trailing" secondItem="wmR-iO-t0m" secondAttribute="trailing" constant="30" id="drV-Dv-T7Y"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描設備" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-VH-bHh">
+                    <rect key="frame" x="0.0" y="30" width="320" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BH6-pB-v3v"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.25882352939999997" green="0.52941176469999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0t-kH-SAf" userLabel="OperationView">
+                    <rect key="frame" x="0.0" y="84" width="320" height="400"/>
+                    <subviews>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-rD-xHJ">
+                            <rect key="frame" x="85" y="102" width="150" height="45"/>
+                            <state key="normal" title="暫停" backgroundImage="btn_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                            <connections>
+                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="JUY-dP-zy0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-8j-Gcn">
+                            <rect key="frame" x="85" y="56" width="150" height="45"/>
+                            <state key="normal" title="收車罩" backgroundImage="btn_image"/>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                            <connections>
+                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="ctg-yR-uMP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-n5-HAj">
+                            <rect key="frame" x="85" y="10" width="150" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="IvM-5s-wsN"/>
+                                <constraint firstAttribute="width" constant="150" id="RSU-2b-hfe"/>
+                            </constraints>
+                            <state key="normal" title="放車罩" backgroundImage="btn_image"/>
+                            <state key="selected" title="放车罩" backgroundImage="btn_select_image"/>
+                            <connections>
+                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="wgH-aI-3tl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8T-Yi-Agf">
+                            <rect key="frame" x="85" y="148" width="150" height="45"/>
+                            <state key="normal" title="下降" backgroundImage="btn_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                            <connections>
+                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="eLh-CV-Xur"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHU-tS-e2p">
+                            <rect key="frame" x="85" y="248" width="150" height="45"/>
+                            <state key="normal" title="尋車" backgroundImage="btn_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                            <connections>
+                                <action selector="seekCar:" destination="-1" eventType="touchUpInside" id="5Ev-z3-A1C"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFs-en-oBq">
+                            <rect key="frame" x="85" y="198" width="150" height="45"/>
+                            <state key="normal" title="角度" backgroundImage="btn_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                            <connections>
+                                <action selector="operationAction:" destination="-1" eventType="touchUpInside" id="krY-Ve-8pn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHV-rt-7ol">
+                            <rect key="frame" x="85" y="298" width="150" height="45"/>
+                            <state key="normal" title="定位" backgroundImage="btn_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUO-GS-Phe">
+                            <rect key="frame" x="85" y="348" width="150" height="45"/>
+                            <state key="normal" title="車罩被移動" backgroundImage="btn_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="btn_select_image"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="trailing" secondItem="Yco-8j-Gcn" secondAttribute="trailing" id="4C7-9a-PI3"/>
+                        <constraint firstItem="DHU-tS-e2p" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="5Qk-BB-gwD"/>
+                        <constraint firstItem="FHV-rt-7ol" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="6Lb-Vo-OGT"/>
+                        <constraint firstAttribute="height" constant="400" id="97w-jW-7Pi"/>
+                        <constraint firstItem="FHV-rt-7ol" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="9kH-hI-3od"/>
+                        <constraint firstItem="xUO-GS-Phe" firstAttribute="top" secondItem="FHV-rt-7ol" secondAttribute="bottom" constant="5" id="CiS-ts-Be3"/>
+                        <constraint firstItem="xUO-GS-Phe" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="FWA-cC-sPC"/>
+                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="Gbp-yp-7U0"/>
+                        <constraint firstItem="fFs-en-oBq" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="Jp2-sv-z2i"/>
+                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="top" secondItem="Yco-8j-Gcn" secondAttribute="bottom" constant="1" id="KLB-XM-lKA"/>
+                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="top" secondItem="YBd-n5-HAj" secondAttribute="bottom" constant="1" id="KZ3-kQ-ueT"/>
+                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="top" secondItem="Dwl-rD-xHJ" secondAttribute="bottom" constant="1" id="MHv-2o-ThL"/>
+                        <constraint firstItem="fFs-en-oBq" firstAttribute="top" secondItem="h8T-Yi-Agf" secondAttribute="bottom" constant="5" id="Mau-cC-RNO"/>
+                        <constraint firstItem="DHU-tS-e2p" firstAttribute="top" secondItem="fFs-en-oBq" secondAttribute="bottom" constant="5" id="O81-mn-QzH"/>
+                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="PSy-5D-ngr"/>
+                        <constraint firstItem="DHU-tS-e2p" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="ToU-Kj-TKs"/>
+                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="WHz-9V-lON"/>
+                        <constraint firstItem="fFs-en-oBq" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="asA-iY-onk"/>
+                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="dGc-2x-8Vt"/>
+                        <constraint firstItem="fFs-en-oBq" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="fBY-G9-PJ7"/>
+                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="fuF-Yf-hHZ"/>
+                        <constraint firstItem="FHV-rt-7ol" firstAttribute="trailing" secondItem="YBd-n5-HAj" secondAttribute="trailing" id="nSw-zE-QOt"/>
+                        <constraint firstItem="h8T-Yi-Agf" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="sMA-Ht-x3G"/>
+                        <constraint firstItem="YBd-n5-HAj" firstAttribute="top" secondItem="q0t-kH-SAf" secondAttribute="top" constant="10" id="seg-Xu-UWb"/>
+                        <constraint firstItem="Dwl-rD-xHJ" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="tRb-Dg-6AV"/>
+                        <constraint firstItem="Yco-8j-Gcn" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="vOq-ro-yzR"/>
+                        <constraint firstItem="YBd-n5-HAj" firstAttribute="centerX" secondItem="q0t-kH-SAf" secondAttribute="centerX" id="vTP-yZ-13H"/>
+                        <constraint firstItem="DHU-tS-e2p" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="vcK-ve-idc"/>
+                        <constraint firstItem="FHV-rt-7ol" firstAttribute="top" secondItem="DHU-tS-e2p" secondAttribute="bottom" constant="5" id="xl7-kh-GKA"/>
+                        <constraint firstItem="xUO-GS-Phe" firstAttribute="height" secondItem="YBd-n5-HAj" secondAttribute="height" id="yKa-sy-ae1"/>
+                        <constraint firstItem="xUO-GS-Phe" firstAttribute="leading" secondItem="YBd-n5-HAj" secondAttribute="leading" id="ydS-lP-Nxg"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfs-8f-Uc7">
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <color key="backgroundColor" red="0.2666666667" green="0.6705882353" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="mAt-l8-gcc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="連接設備" backgroundImage="btn_image1">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="解除綁定" backgroundImage="btn_select_image1"/>
+                    <connections>
+                        <action selector="choiceDeviceOrDisconnect:" destination="-1" eventType="touchUpInside" id="VLo-mE-9ZC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>

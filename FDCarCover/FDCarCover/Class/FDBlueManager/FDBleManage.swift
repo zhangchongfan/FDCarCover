@@ -28,12 +28,12 @@ enum ConnectState {
     case poweredOff //系统蓝牙没有开启
     case timeOut //连接超时
 }
-//let serviceUUID = "FFD0"
-//let writeUUID = "FFD1"
-//let notifyUUID = "FFD1"
-let serviceUUID = "F0080001-0451-4000-B000-000000000000"
-let writeUUID = "F0080003-0451-4000-B000-000000000000"
-let notifyUUID = "F0080002-0451-4000-B000-000000000000"
+let serviceUUID = "FFD0"
+let writeUUID = "FFD1"
+let notifyUUID = "FFD1"
+//let serviceUUID = "F0080001-0451-4000-B000-000000000000"
+//let writeUUID = "F0080003-0451-4000-B000-000000000000"
+//let notifyUUID = "F0080002-0451-4000-B000-000000000000"
 
 class FDBleManage: NSObject {
     

@@ -217,7 +217,7 @@ class MainViewController: UIViewController {
     
     func disconnected() {
         selectDeviceBtn.isSelected = false
-        tipLabel.text = "設備未綁定"
+        tipLabel.text = "掃描設備"
         for btn in operationBtns {
             btn.isSelected = false
         }
