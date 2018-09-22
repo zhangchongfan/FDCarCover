@@ -17,15 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
         // Do any additional setup after loading the view.
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         let lastLoginAccount = UserDefaults.standard.value(forKey: FDLastLoginAccount) as? String
         pwdTextField.text = ""
         if lastLoginAccount != nil {
@@ -37,6 +29,11 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
     @IBAction func rememberPasswordAction(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -47,28 +44,51 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registAction(_ sender: UIButton) {
-        if accountAndPasswordFormatCorrect() {
-            if equalLastLoginAccount(account: accountTextField.text!) {//如果是上次的账号
-                MBProgressHUD.fd_show(withText: "賬號已經被註冊", mode: .text, add: view)
-                return
-            }
-            
-            let alertView = UIAlertView(title: "提示", message: "是否確認註冊？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "確認")
-            alertView.show()
+        let registerController = RegisterViewController()
+        registerController.registerSuccess = {[weak self] account, password  in
+            self?.accountTextField.text = account
+            self?.pwdTextField.text = ""
         }
+        self .present(registerController, animated: true, completion: nil)
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
+//        if UIScreen.main.bounds.size.width == 320 {//调试
+//            guard let serverManager = FDServerManager.share() else {
+//                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
+//                return
+//            }
+//            
+//            let params = [
+//                "imei":"123456789123456","sim":"0952010210","time":"20180910073959","longitude":"121.276053","latitude":"30.189263","iotstate":"2","type":"1"
+//            ]
+//            serverManager.updateLocation(withParams: params, success: {[weak self] (response) in
+//                MBProgressHUD.fd_show(withText: "更新位置成功", mode: .text, add: self?.view)
+//            }, failre: {[weak self] in
+//                MBProgressHUD.fd_show(withText: "更新位置失败", mode: .text, add: self?.view)
+//            })
+//            return
+//        }
         if accountAndPasswordFormatCorrect() {
-            if !equalLastLoginAccount(account: accountTextField.text!) {//如果不是上次的账号
-                MBProgressHUD.fd_show(withText: "賬號不正確", mode: .text, add: view)
+            guard let serverManager = FDServerManager.share() else {
+                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
                 return
             }
-            if !equalLastLoginPassword(password: pwdTextField.text!) {//如果不是上次的密码
-                MBProgressHUD.fd_show(withText: "密碼不正確", mode: .text, add: view)
+            
+            guard AppDelegate.shareDelegate().device != nil else {
+                MBProgressHUD.fd_show(withText: "網絡异常，資訊獲取失敗", mode: .text, add: view)
                 return
             }
-            registAndLoginSuccess()
+            
+            if serverManager.netNormal == false {
+                MBProgressHUD.fd_show(withText: "網絡异常", mode: .text, add: view)
+            }else {
+                serverManager.login(withParams: loginRequestParams(), success: {[weak self] (response) in
+                        self?.handleLoginData(response)
+                    }, failre: {[weak self] in
+                        MBProgressHUD.fd_show(withText: "登入失败", mode: .text, add: self?.view)
+                })
+            }
         }
     }
     
@@ -93,7 +113,7 @@ class LoginViewController: UIViewController {
         }
         
         if pwdTextField.text?.count != 4 {
-            MBProgressHUD.fd_show(withText: "密码必须是4位有效数字", mode: .text, add: view)
+            MBProgressHUD.fd_show(withText: "密碼必須是4比特有效數字", mode: .text, add: view)
             pwdTextField.becomeFirstResponder()
             return false
         }
@@ -101,36 +121,44 @@ class LoginViewController: UIViewController {
         return true
     }
     
-    func registAndLoginSuccess()  {
+    func loginRequestParams() -> [String : String] {
+        guard let account = accountTextField.text,
+            let password = pwdTextField.text,
+            let token = AppDelegate.shareDelegate().device
+            else {
+                return [:]
+        }
+        return [AccountKey: account, PasswordKey: password, CarTypeKey: "1",DeviceToken:token]
+    }
+    
+    func handleLoginData(_ responser: [AnyHashable : Any]?) {
+        guard let data = responser else {
+            MBProgressHUD.fd_show(withText: "服務器資料處理异常", mode: .text, add: self.view)
+            return
+        }
+        let status = data[StatusKey] as! String
+        if status == "1" {
+            MBProgressHUD.fd_show(withText: "登入成功", mode: .text, add: self.view)
+            //信息归档
+            let userInfo = FDAcountInfo(data)
+            userInfo.archive(accountTextField.text!)
+            loginSuccess()
+        }else if status == "2" {
+            MBProgressHUD.fd_show(withText: "帳號不存在", mode: .text, add: self.view)
+        }else if status == "3" {
+            MBProgressHUD.fd_show(withText: "密碼錯誤", mode: .text, add: self.view)
+        }else {
+            MBProgressHUD.fd_show(withText: "服務器异常", mode: .text, add: self.view)
+        }
+    }
+    
+    func loginSuccess()  {
         UserDefaults.standard.set(accountTextField.text, forKey: FDLastLoginAccount)
         UserDefaults.standard.set(pwdTextField.text, forKey: FDLastLoginPassword)
         UserDefaults.standard.set(rememberBtn.isSelected, forKey: FDLastRememberPassword)
         UserDefaults.standard.set(autoLoginBtn.isSelected, forKey: FDLastAutoLogin)
-        
         UserDefaults.standard.synchronize()
         AppDelegate.shareDelegate().setMainControllerForRoot()
-    }
-    
-    func equalLastLoginAccount(account: String) -> Bool {
-        let lastLoginAccount = UserDefaults.standard.value(forKey: FDLastLoginAccount) as? String
-        
-        if lastLoginAccount != nil {
-            if lastLoginAccount == account {
-                return true
-            }
-        }
-        return false
-    }
-    
-    func equalLastLoginPassword(password: String) -> Bool {
-        let lastLoginPassword = UserDefaults.standard.value(forKey: FDLastLoginPassword) as? String
-        
-        if lastLoginPassword != nil {
-            if lastLoginPassword == password {
-                return true
-            }
-        }
-        return false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -142,7 +170,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate,UIAlertViewDelegate {
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 1 {
-            registAndLoginSuccess()
+            loginSuccess()
         }
     }
 }

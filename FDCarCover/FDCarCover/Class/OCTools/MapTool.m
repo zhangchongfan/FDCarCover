@@ -7,21 +7,18 @@
 //
 
 #import "MapTool.h"
+
 #define WEAKSELF     typeof(self) __weak weakSelf = self;
 @implementation MapTool
 
 
 + (MapTool *)sharedMapTool{
-
-
-  static MapTool *mapTool = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
+    static MapTool *mapTool = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
     mapTool = [[MapTool alloc] init];
-  });
-  
-  return mapTool;
-  
+    });
+    return mapTool;
 }
 /**
  调用三方导航

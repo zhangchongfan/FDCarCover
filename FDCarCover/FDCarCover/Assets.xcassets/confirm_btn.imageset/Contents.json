@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 178,
+          "height" : 59
+        },
+        "cap-insets" : {
+          "bottom" : 10,
+          "top" : 11,
+          "right" : 10,
+          "left" : 12
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "confirm_btn.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

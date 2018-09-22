@@ -70,7 +70,7 @@ class FDBleManage: NSObject {
     func startScan(result:@escaping ((_ peripherModel: FDPeripherModel) -> ())) {//开始扫描
         scanResult = result
         let deviceUUID = CBUUID(string: serviceUUID)
-        centralManager?.scanForPeripherals(withServices: nil, options: nil)
+        centralManager?.scanForPeripherals(withServices: [deviceUUID], options: nil)
     }
     
     func stopScan() {//停止扫描

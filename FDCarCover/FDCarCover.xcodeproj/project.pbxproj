@@ -7,7 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591030D521311C2D00DC8CBC /* FDServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 591030D421311C2D00DC8CBC /* FDServerManager.m */; };
+		591030D82131244400DC8CBC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591030D62131244400DC8CBC /* RegisterViewController.swift */; };
+		591030D92131244400DC8CBC /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591030D72131244400DC8CBC /* RegisterViewController.xib */; };
+		591030DC2131307200DC8CBC /* WYPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 591030DB2131307200DC8CBC /* WYPHelper.m */; };
+		591030DF2131361000DC8CBC /* FormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591030DE2131361000DC8CBC /* FormatManager.swift */; };
+		591030E121313A6900DC8CBC /* FDPublicKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591030E021313A6900DC8CBC /* FDPublicKeys.swift */; };
 		5975C37A20176A2C0035E564 /* FDDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975C37920176A2C0035E564 /* FDDataHandle.swift */; };
+		59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD021318C8500D1AF6A /* IoTMapViewController.swift */; };
+		59999CD3213282B900D1AF6A /* FDLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD2213282B900D1AF6A /* FDLocationInfo.swift */; };
+		59DA1B4E213BA5C20084B3A3 /* UMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B4D213BA5C20084B3A3 /* UMPush.framework */; };
+		59DA1B53213BA5C90084B3A3 /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B52213BA5C90084B3A3 /* UMCommon.framework */; };
+		59DA1B55213BA5F60084B3A3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B54213BA5F60084B3A3 /* SystemConfiguration.framework */; };
+		59DA1B57213BA6080084B3A3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B56213BA6080084B3A3 /* libsqlite3.tbd */; };
+		59DA1B59213BA6120084B3A3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B58213BA6120084B3A3 /* libz.tbd */; };
+		59DA1B5B213BA61E0084B3A3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B5A213BA61E0084B3A3 /* CoreTelephony.framework */; };
+		59DA1B5D213BA8F20084B3A3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B5C213BA8F20084B3A3 /* UserNotifications.framework */; };
+		59E4BB7A21314A3B00BBE106 /* ZCNSObject+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4BB7921314A3B00BBE106 /* ZCNSObject+Dispatch.swift */; };
+		59E4BB8121314AE800BBE106 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 59E4BB7C21314AE800BBE106 /* Documentation.html */; };
+		59E4BB8221314AE800BBE106 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E4BB7D21314AE800BBE106 /* GCDAsyncUdpSocket.m */; };
+		59E4BB8321314AE800BBE106 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E4BB7E21314AE800BBE106 /* GCDAsyncSocket.m */; };
+		59E4BB8521314AF100BBE106 /* GBGCDAsyncSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E4BB8421314AF100BBE106 /* GBGCDAsyncSocketManager.swift */; };
 		59F719E12014B3E20050DB1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F719DF2014B3E20050DB1F /* LoginViewController.swift */; };
 		59F719E22014B3E20050DB1F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F719E02014B3E20050DB1F /* LoginViewController.xib */; };
 		59F719E52014C3CA0050DB1F /* FDAcountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */; };
@@ -28,10 +48,37 @@
 		67080CC92011E2C100BBEFDF /* FDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67080CC82011E2C100BBEFDF /* FDConstants.swift */; };
 		67080CCC2011E66900BBEFDF /* VPLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67080CCB2011E66900BBEFDF /* VPLocationConverter.m */; };
 		677B725020132D2C00AB1371 /* MapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 677B724F20132D2C00AB1371 /* MapTool.m */; };
+		D6B3B89EB279E7D0717BA1A6 /* Pods_FDCarCover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F1314809D76AFCBA9AD00E /* Pods_FDCarCover.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		591030D22131191F00DC8CBC /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		591030D321311C2D00DC8CBC /* FDServerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDServerManager.h; sourceTree = "<group>"; };
+		591030D421311C2D00DC8CBC /* FDServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDServerManager.m; sourceTree = "<group>"; };
+		591030D62131244400DC8CBC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		591030D72131244400DC8CBC /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		591030DA2131307100DC8CBC /* WYPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPHelper.h; sourceTree = "<group>"; };
+		591030DB2131307200DC8CBC /* WYPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPHelper.m; sourceTree = "<group>"; };
+		591030DE2131361000DC8CBC /* FormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatManager.swift; sourceTree = "<group>"; };
+		591030E021313A6900DC8CBC /* FDPublicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDPublicKeys.swift; sourceTree = "<group>"; };
 		5975C37920176A2C0035E564 /* FDDataHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDDataHandle.swift; sourceTree = "<group>"; };
+		59999CD021318C8500D1AF6A /* IoTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTMapViewController.swift; sourceTree = "<group>"; };
+		59999CD2213282B900D1AF6A /* FDLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDLocationInfo.swift; sourceTree = "<group>"; };
+		59DA1B4D213BA5C20084B3A3 /* UMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMPush.framework; sourceTree = "<group>"; };
+		59DA1B52213BA5C90084B3A3 /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
+		59DA1B54213BA5F60084B3A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		59DA1B56213BA6080084B3A3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		59DA1B58213BA6120084B3A3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		59DA1B5A213BA61E0084B3A3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		59DA1B5C213BA8F20084B3A3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		59DA1B5E213BA9010084B3A3 /* FDCarCover.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FDCarCover.entitlements; sourceTree = "<group>"; };
+		59E4BB7921314A3B00BBE106 /* ZCNSObject+Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZCNSObject+Dispatch.swift"; sourceTree = "<group>"; };
+		59E4BB7C21314AE800BBE106 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
+		59E4BB7D21314AE800BBE106 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		59E4BB7E21314AE800BBE106 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		59E4BB7F21314AE800BBE106 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		59E4BB8021314AE800BBE106 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		59E4BB8421314AF100BBE106 /* GBGCDAsyncSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBGCDAsyncSocketManager.swift; sourceTree = "<group>"; };
 		59F719DF2014B3E20050DB1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		59F719E02014B3E20050DB1F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAcountInfo.swift; sourceTree = "<group>"; };
@@ -59,6 +106,9 @@
 		67080CCB2011E66900BBEFDF /* VPLocationConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLocationConverter.m; sourceTree = "<group>"; };
 		677B724E20132D2C00AB1371 /* MapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTool.h; sourceTree = "<group>"; };
 		677B724F20132D2C00AB1371 /* MapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTool.m; sourceTree = "<group>"; };
+		98FCCCBC6A5498DCA3C2F265 /* Pods-FDCarCover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDCarCover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FDCarCover/Pods-FDCarCover.debug.xcconfig"; sourceTree = "<group>"; };
+		9D29227AB9A252CC8079C606 /* Pods-FDCarCover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FDCarCover.release.xcconfig"; path = "Pods/Target Support Files/Pods-FDCarCover/Pods-FDCarCover.release.xcconfig"; sourceTree = "<group>"; };
+		C0F1314809D76AFCBA9AD00E /* Pods_FDCarCover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FDCarCover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,16 +116,106 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DA1B5D213BA8F20084B3A3 /* UserNotifications.framework in Frameworks */,
+				59DA1B5B213BA61E0084B3A3 /* CoreTelephony.framework in Frameworks */,
+				59DA1B59213BA6120084B3A3 /* libz.tbd in Frameworks */,
+				59DA1B57213BA6080084B3A3 /* libsqlite3.tbd in Frameworks */,
+				59DA1B55213BA5F60084B3A3 /* SystemConfiguration.framework in Frameworks */,
+				59DA1B53213BA5C90084B3A3 /* UMCommon.framework in Frameworks */,
+				59DA1B4E213BA5C20084B3A3 /* UMPush.framework in Frameworks */,
+				D6B3B89EB279E7D0717BA1A6 /* Pods_FDCarCover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591030CE213116C300DC8CBC /* ServerTools */ = {
+			isa = PBXGroup;
+			children = (
+				59E4BB7B21314AE800BBE106 /* GCDSocket */,
+				591030D321311C2D00DC8CBC /* FDServerManager.h */,
+				591030D421311C2D00DC8CBC /* FDServerManager.m */,
+				591030E021313A6900DC8CBC /* FDPublicKeys.swift */,
+				59E4BB8421314AF100BBE106 /* GBGCDAsyncSocketManager.swift */,
+			);
+			path = ServerTools;
+			sourceTree = "<group>";
+		};
+		591030DD213135F500DC8CBC /* SwiftTools */ = {
+			isa = PBXGroup;
+			children = (
+				591030DE2131361000DC8CBC /* FormatManager.swift */,
+			);
+			path = SwiftTools;
+			sourceTree = "<group>";
+		};
+		59DA1B4A213BA2960084B3A3 /* Thirty */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B4F213BA5C90084B3A3 /* common */,
+				59DA1B4B213BA5C20084B3A3 /* push */,
+			);
+			path = Thirty;
+			sourceTree = "<group>";
+		};
+		59DA1B4B213BA5C20084B3A3 /* push */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B4C213BA5C20084B3A3 /* push_ios_3.2.2 */,
+			);
+			path = push;
+			sourceTree = "<group>";
+		};
+		59DA1B4C213BA5C20084B3A3 /* push_ios_3.2.2 */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B4D213BA5C20084B3A3 /* UMPush.framework */,
+			);
+			path = push_ios_3.2.2;
+			sourceTree = "<group>";
+		};
+		59DA1B4F213BA5C90084B3A3 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B50213BA5C90084B3A3 /* common_ios_1.5.2 */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		59DA1B50213BA5C90084B3A3 /* common_ios_1.5.2 */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B51213BA5C90084B3A3 /* normal */,
+			);
+			path = common_ios_1.5.2;
+			sourceTree = "<group>";
+		};
+		59DA1B51213BA5C90084B3A3 /* normal */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B52213BA5C90084B3A3 /* UMCommon.framework */,
+			);
+			path = normal;
+			sourceTree = "<group>";
+		};
+		59E4BB7B21314AE800BBE106 /* GCDSocket */ = {
+			isa = PBXGroup;
+			children = (
+				59E4BB7C21314AE800BBE106 /* Documentation.html */,
+				59E4BB7D21314AE800BBE106 /* GCDAsyncUdpSocket.m */,
+				59E4BB7E21314AE800BBE106 /* GCDAsyncSocket.m */,
+				59E4BB7F21314AE800BBE106 /* GCDAsyncUdpSocket.h */,
+				59E4BB8021314AE800BBE106 /* GCDAsyncSocket.h */,
+			);
+			path = GCDSocket;
+			sourceTree = "<group>";
+		};
 		59F719E32014C39D0050DB1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */,
+				59999CD2213282B900D1AF6A /* FDLocationInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +225,8 @@
 			children = (
 				67080C8D200E12C400BBEFDF /* FDCarCover */,
 				67080C8C200E12C400BBEFDF /* Products */,
+				F49E4E69AF648EAEB87823F6 /* Pods */,
+				91A7F600527D8F5EE2658B13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +241,7 @@
 		67080C8D200E12C400BBEFDF /* FDCarCover */ = {
 			isa = PBXGroup;
 			children = (
+				59DA1B5E213BA9010084B3A3 /* FDCarCover.entitlements */,
 				67080CA0200E12CF00BBEFDF /* Class */,
 				67080C92200E12C400BBEFDF /* Main.storyboard */,
 				67080C95200E12C400BBEFDF /* Assets.xcassets */,
@@ -111,6 +254,9 @@
 		67080CA0200E12CF00BBEFDF /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				59DA1B4A213BA2960084B3A3 /* Thirty */,
+				591030DD213135F500DC8CBC /* SwiftTools */,
+				591030CE213116C300DC8CBC /* ServerTools */,
 				59F719E32014C39D0050DB1F /* Models */,
 				67080CC52011D96800BBEFDF /* BaseControllers */,
 				67080CBD20119A8000BBEFDF /* OCTools */,
@@ -139,8 +285,11 @@
 				67080CA7200E137500BBEFDF /* MainViewController.swift */,
 				67080CA8200E137500BBEFDF /* MainViewController.xib */,
 				67080CB420117C8900BBEFDF /* MapViewController.swift */,
+				59999CD021318C8500D1AF6A /* IoTMapViewController.swift */,
 				59F719DF2014B3E20050DB1F /* LoginViewController.swift */,
 				59F719E02014B3E20050DB1F /* LoginViewController.xib */,
+				591030D62131244400DC8CBC /* RegisterViewController.swift */,
+				591030D72131244400DC8CBC /* RegisterViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +314,7 @@
 		67080CBA201189DC00BBEFDF /* Expend */ = {
 			isa = PBXGroup;
 			children = (
+				59E4BB7921314A3B00BBE106 /* ZCNSObject+Dispatch.swift */,
 				67080CBB20118A1E00BBEFDF /* ZCUIView+setRect.swift */,
 			);
 			path = Expend;
@@ -173,6 +323,8 @@
 		67080CBD20119A8000BBEFDF /* OCTools */ = {
 			isa = PBXGroup;
 			children = (
+				591030DA2131307100DC8CBC /* WYPHelper.h */,
+				591030DB2131307200DC8CBC /* WYPHelper.m */,
 				677B724E20132D2C00AB1371 /* MapTool.h */,
 				677B724F20132D2C00AB1371 /* MapTool.m */,
 				67080CCA2011E66900BBEFDF /* VPLocationConverter.h */,
@@ -194,6 +346,29 @@
 			path = BaseControllers;
 			sourceTree = "<group>";
 		};
+		91A7F600527D8F5EE2658B13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA1B5C213BA8F20084B3A3 /* UserNotifications.framework */,
+				59DA1B5A213BA61E0084B3A3 /* CoreTelephony.framework */,
+				59DA1B58213BA6120084B3A3 /* libz.tbd */,
+				59DA1B56213BA6080084B3A3 /* libsqlite3.tbd */,
+				59DA1B54213BA5F60084B3A3 /* SystemConfiguration.framework */,
+				591030D22131191F00DC8CBC /* AFNetworking.framework */,
+				C0F1314809D76AFCBA9AD00E /* Pods_FDCarCover.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F49E4E69AF648EAEB87823F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98FCCCBC6A5498DCA3C2F265 /* Pods-FDCarCover.debug.xcconfig */,
+				9D29227AB9A252CC8079C606 /* Pods-FDCarCover.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,9 +376,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67080C9D200E12C400BBEFDF /* Build configuration list for PBXNativeTarget "FDCarCover" */;
 			buildPhases = (
+				7CD01007CF6EC5A8588DD13B /* [CP] Check Pods Manifest.lock */,
 				67080C87200E12C400BBEFDF /* Sources */,
 				67080C88200E12C400BBEFDF /* Frameworks */,
 				67080C89200E12C400BBEFDF /* Resources */,
+				3E11768176DA200A79165F2B /* [CP] Embed Pods Frameworks */,
+				25BD786410528699D6A6A42C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +408,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -264,32 +445,99 @@
 				67080C96200E12C400BBEFDF /* Assets.xcassets in Resources */,
 				67080C94200E12C400BBEFDF /* Main.storyboard in Resources */,
 				67080CAA200E137500BBEFDF /* MainViewController.xib in Resources */,
+				59E4BB8121314AE800BBE106 /* Documentation.html in Resources */,
+				591030D92131244400DC8CBC /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25BD786410528699D6A6A42C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FDCarCover/Pods-FDCarCover-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E11768176DA200A79165F2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FDCarCover/Pods-FDCarCover-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FDCarCover/Pods-FDCarCover-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CD01007CF6EC5A8588DD13B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FDCarCover-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67080C87200E12C400BBEFDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E4BB8321314AE800BBE106 /* GCDAsyncSocket.m in Sources */,
 				59F719E12014B3E20050DB1F /* LoginViewController.swift in Sources */,
 				67080CC120119AA200BBEFDF /* VPLocationManager.m in Sources */,
+				59E4BB8221314AE800BBE106 /* GCDAsyncUdpSocket.m in Sources */,
+				591030DF2131361000DC8CBC /* FormatManager.swift in Sources */,
 				67080CA4200E132300BBEFDF /* FDBleManage.swift in Sources */,
+				59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */,
 				67080CB820117CDA00BBEFDF /* MapRouteView.swift in Sources */,
 				67080CBC20118A1E00BBEFDF /* ZCUIView+setRect.swift in Sources */,
 				67080CC72011D9E300BBEFDF /* FDBaseNavigationController.swift in Sources */,
 				67080CC42011C13600BBEFDF /* MBProgressHUD.m in Sources */,
 				67080CA5200E132300BBEFDF /* FDPeripherModel.swift in Sources */,
 				67080CCC2011E66900BBEFDF /* VPLocationConverter.m in Sources */,
+				591030D82131244400DC8CBC /* RegisterViewController.swift in Sources */,
 				59F719E52014C3CA0050DB1F /* FDAcountInfo.swift in Sources */,
+				59E4BB7A21314A3B00BBE106 /* ZCNSObject+Dispatch.swift in Sources */,
 				67080C8F200E12C400BBEFDF /* AppDelegate.swift in Sources */,
 				67080CC92011E2C100BBEFDF /* FDConstants.swift in Sources */,
+				591030DC2131307200DC8CBC /* WYPHelper.m in Sources */,
+				59E4BB8521314AF100BBE106 /* GBGCDAsyncSocketManager.swift in Sources */,
 				677B725020132D2C00AB1371 /* MapTool.m in Sources */,
+				591030D521311C2D00DC8CBC /* FDServerManager.m in Sources */,
 				5975C37A20176A2C0035E564 /* FDDataHandle.swift in Sources */,
+				591030E121313A6900DC8CBC /* FDPublicKeys.swift in Sources */,
 				67080CB520117C8900BBEFDF /* MapViewController.swift in Sources */,
 				67080CA9200E137500BBEFDF /* MainViewController.swift in Sources */,
+				59999CD3213282B900D1AF6A /* FDLocationInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,38 +672,60 @@
 		};
 		67080C9E200E12C400BBEFDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98FCCCBC6A5498DCA3C2F265 /* Pods-FDCarCover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FDCarCover/FDCarCover.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4E8S34J8UT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AFNetworking\"",
+					"$(PROJECT_DIR)/FDCarCover/Class/Thirty/push/push_ios_3.2.2",
+					"$(PROJECT_DIR)/FDCarCover/Class/Thirty/common/common_ios_1.5.2/normal",
+				);
 				INFOPLIST_FILE = FDCarCover/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.veepoo.FDCarCover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FDCarCover/Class/OCTools/FDCarCover-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};
 			name = Debug;
 		};
 		67080C9F200E12C400BBEFDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D29227AB9A252CC8079C606 /* Pods-FDCarCover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FDCarCover/FDCarCover.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4E8S34J8UT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FDCarCover/Class/Thirty/push/push_ios_3.2.2",
+					"$(PROJECT_DIR)/FDCarCover/Class/Thirty/common/common_ios_1.5.2/normal",
+				);
 				INFOPLIST_FILE = FDCarCover/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.veepoo.FDCarCover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FDCarCover/Class/OCTools/FDCarCover-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
 			};
 			name = Release;
 		};

@@ -33,6 +33,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var angleBtn: UIButton!
     
+    @IBOutlet weak var moveBtn: UIButton!
+    
+    var moveTime: String?
+    
+    var heartTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +47,31 @@ class MainViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "返回"
         navigationItem.backBarButtonItem = backItem
+        
+        heartTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(addMoveHeart), userInfo: nil, repeats: true)
+        RunLoop.main.add(heartTimer!, forMode: RunLoopMode.commonModes)
+        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let serverManager = FDServerManager.share() else {
+            //                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
+            return
+        }
+        if serverManager.netNormal == false {
+            
+        }else {
+            let params = FDAcountInfo.obtainPairParams("1")
+            if params.count == 0 {
+                return
+            }
+            serverManager.pairIMEI(withParams: params, success: {[weak self] (response) in
+                print("绑定成功")
+                }, failre: {[weak self] in
+                    print("绑定失败")
+            })
+        }
     }
 
     func setControllerUI()  {
@@ -112,11 +137,40 @@ class MainViewController: UIViewController {
             MBProgressHUD.fd_show(withText: "沒有停車記錄", mode: .text, add: view).hide(true, afterDelay: 1.0)
             return
         }
-        
         let mapViewController = MapViewController()
         mapViewController.destinationDict = locationDict
         navigationController?.pushViewController(mapViewController, animated: true)
     }
+    
+    @IBAction func obtainIoTLocation(_ sender: UIButton) {
+        if locationManager.locationIsDenied() {
+            forwardSettingLocation()
+            return
+        }
+        let mapViewController = IoTMapViewController()
+        mapViewController.type = 1
+//        mapViewController.destinationDict = locationDict
+        navigationController?
+            .pushViewController(mapViewController, animated: true)
+    }
+    
+    @IBAction func obtainCarMoveLocation(_ sender: UIButton) {
+        if locationManager.locationIsDenied() {
+            forwardSettingLocation()
+            return
+        }
+        if sender.isSelected {
+            if let time = moveTime {
+                FDLocationInfo.saveLastMoveInfomation(time)
+            }
+            sender.isSelected = false
+        }
+        let mapViewController = IoTMapViewController()
+        mapViewController.type = 2
+        navigationController?
+            .pushViewController(mapViewController, animated: true)
+    }
+    
     
     func updateOperationBtnsState(tag: Int) {
         for btn in operationBtns {
@@ -247,9 +301,7 @@ class MainViewController: UIViewController {
     func getCurrentLocation() {
         UserDefaults.standard.removeObject(forKey: FDLastLocation)
         if locationManager.locationIsDenied() {
-            let alertView = UIAlertView(title: "提示", message: "GPS定位權限未打開,無法獲取您的停車位置,是否前往設置?", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "前往")
-            alertView.tag = 0
-            alertView.show()
+            forwardSettingLocation()
             return
         }
         locationManager.startLocation { [unowned self](location, horizon) in
@@ -271,7 +323,17 @@ class MainViewController: UIViewController {
         UserDefaults.standard.synchronize()
     }
     
+    func forwardSettingLocation() {
+        let alertView = UIAlertView(title: "提示", message: "GPS定位權限未打開,無法獲取您的停車位置,是否前往設置?", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "前往")
+        alertView.tag = 0
+        alertView.show()
+    }
+    
     deinit {
+        if let timer = heartTimer {
+            timer.invalidate()
+            heartTimer = nil
+        }
         print("deinit")
     }
 }
@@ -325,4 +387,51 @@ extension MainViewController: UIAlertViewDelegate {
     }
 }
 
-
+//处理服务器数据
+extension MainViewController {
+    @objc func addMoveHeart() {
+            guard let serverManager = FDServerManager.share() else {
+                //                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
+                return
+            }
+            if serverManager.netNormal == false {
+                
+            }else {
+                let params = FDAcountInfo.obtainIoTLoactions("2", count: "1")
+                if params.count == 0 {
+                    return
+                }
+                serverManager.iotLocations(withParams: params, success: {[weak self] (response) in
+                    self?.handleLocations(response)
+                    }, failre: {[weak self] in
+                        
+                })
+            }
+    }
+    
+    func handleLocations(_ responser: [AnyHashable : Any]?) {
+        guard let data = responser else {
+            return
+        }
+        let status = data[StatusKey] as! String
+        if status == "1" {
+            guard let informations: [[String : Any]] = data[InformationsKey] as? [[String : Any]] else {
+                return
+            }
+            if informations.count > 0 {
+                let locationInfo = FDLocationInfo(loacationInfo: informations[0])
+                if FDLocationInfo.isNewMoveLocation(locationInfo.time!) {
+                    self.moveTime = locationInfo.time!
+                    self.moveBtn.isSelected = true
+                }
+            }else {
+            }
+        }else if status == "2" {
+//            hud?.labelText = "帳號不存在"
+        }else if status == "3" {
+//            hud?.labelText = "IMEI碼不存在"
+        }else {
+//            hud?.labelText = "服務器异常"
+        }
+    }
+}
