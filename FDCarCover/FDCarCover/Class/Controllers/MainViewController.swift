@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "掃描設備"
         configuringBle()
         setControllerUI()
         let backItem = UIBarButtonItem()
@@ -55,45 +56,24 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let serverManager = FDServerManager.share() else {
-            //                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
-            return
-        }
-        if serverManager.netNormal == false {
-            
-        }else {
-            let params = FDAcountInfo.obtainPairParams("1")
-            if params.count == 0 {
-                return
-            }
-            serverManager.pairIMEI(withParams: params, success: {[weak self] (response) in
-                print("绑定成功")
-                }, failre: {[weak self] in
-                    print("绑定失败")
-            })
-        }
     }
 
     func setControllerUI()  {
         deviceBackView.backgroundColor = UIColor(red: 100/255.0, green: 100/255.0, blue: 100/255.0, alpha: 0.5)
         let rightNaviBtn = UIButton(type: .custom)
         rightNaviBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        rightNaviBtn.setImage(UIImage(named:"sing_out"), for: .normal)
-        rightNaviBtn.addTarget(self, action: #selector(signOutAction(_:)), for: .touchUpInside)
+        rightNaviBtn.contentMode = .scaleAspectFill
+        rightNaviBtn
+            .setImage(UIImage(named:"settings"), for: .normal)
+        rightNaviBtn.addTarget(self, action: #selector(enterMineController(_:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightNaviBtn)
     }
     
-    @objc func signOutAction(_ sender: UIButton) {
-        if bleManager.connected {
-            MBProgressHUD.fd_show(withText: "請先解綁設備", mode: .text, add: view)
-            return
-        }
-        UserDefaults.standard.removeObject(forKey: FDLastAutoLogin)
-        UserDefaults.standard.synchronize()
-        FDPeripherModel.notAutoConnect()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            AppDelegate.shareDelegate().setLoginForRoot()
-        }
+    //进入我的页面
+    @objc func enterMineController(_ sender: UIButton) {
+        let mineController = MineViewController()
+        navigationController?
+            .pushViewController(mineController, animated: true)
     }
     
     
@@ -262,7 +242,7 @@ class MainViewController: UIViewController {
     func connected() {
         hideListView(UIButton())
         selectDeviceBtn.isSelected = true
-        tipLabel.text = (bleManager.connectPeripherModel?.name)! + "已綁定"
+        title = (bleManager.connectPeripherModel?.name)! + "已綁定"
         MBProgressHUD.fd_show(withText: "已綁定設備", mode: .text, add: view)
         //先要发送一条校验的账号,账号和密码
         let verifyData: Data = FDDataHandle.verifyAccountAndPasswordData()
@@ -271,7 +251,7 @@ class MainViewController: UIViewController {
     
     func disconnected() {
         selectDeviceBtn.isSelected = false
-        tipLabel.text = "掃描設備"
+        title = "掃描設備"
         for btn in operationBtns {
             btn.isSelected = false
         }

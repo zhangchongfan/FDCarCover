@@ -11,7 +11,7 @@ import UIKit
 class FDBaseNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
+//        navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationBar.shadowImage = UIImage()
     }
 }

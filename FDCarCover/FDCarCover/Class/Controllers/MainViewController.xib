@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,6 @@
                 <outlet property="deviceView" destination="wmR-iO-t0m" id="0Rp-fu-0lw"/>
                 <outlet property="moveBtn" destination="xUO-GS-Phe" id="T3j-fn-Rvt"/>
                 <outlet property="selectDeviceBtn" destination="wfs-8f-Uc7" id="DSb-jM-hzR"/>
-                <outlet property="tipLabel" destination="zHu-VH-bHh" id="TM7-TL-9nP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="operationBtns" destination="YBd-n5-HAj" collectionClass="NSMutableArray" id="8rr-4j-Bvf"/>
                 <outletCollection property="operationBtns" destination="Yco-8j-Gcn" collectionClass="NSMutableArray" id="ODT-lA-tTz"/>
@@ -207,15 +206,6 @@
                         <constraint firstAttribute="trailing" secondItem="wmR-iO-t0m" secondAttribute="trailing" constant="30" id="drV-Dv-T7Y"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描設備" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-VH-bHh">
-                    <rect key="frame" x="0.0" y="30" width="320" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="BH6-pB-v3v"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="0.25882352939999997" green="0.52941176469999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfs-8f-Uc7">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <color key="backgroundColor" red="0.2666666667" green="0.6705882353" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -240,12 +230,9 @@
                 <constraint firstItem="wfs-8f-Uc7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ud-Uh-eR9"/>
                 <constraint firstAttribute="bottom" secondItem="mE3-O4-Xhb" secondAttribute="bottom" id="AyJ-ib-Xer"/>
                 <constraint firstAttribute="trailing" secondItem="q0t-kH-SAf" secondAttribute="trailing" id="E70-h9-dHR"/>
-                <constraint firstItem="zHu-VH-bHh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="GrV-fE-9Fn"/>
-                <constraint firstItem="zHu-VH-bHh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HSV-8g-pZH"/>
                 <constraint firstItem="mE3-O4-Xhb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OUd-Uf-VAz"/>
                 <constraint firstItem="q0t-kH-SAf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q5O-Ob-TJX"/>
                 <constraint firstAttribute="trailing" secondItem="wfs-8f-Uc7" secondAttribute="trailing" id="ddn-XP-Evo"/>
-                <constraint firstAttribute="trailing" secondItem="zHu-VH-bHh" secondAttribute="trailing" id="h7O-u4-nEb"/>
                 <constraint firstAttribute="trailing" secondItem="mE3-O4-Xhb" secondAttribute="trailing" id="kWk-7P-Uqo"/>
                 <constraint firstItem="mE3-O4-Xhb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vri-Wd-4MK"/>
             </constraints>

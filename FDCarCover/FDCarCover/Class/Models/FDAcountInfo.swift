@@ -15,6 +15,8 @@ class FDAcountInfo: NSObject, NSCoding {
     var imeis: [String]? = nil
     var expirationDate: String?
     var accessToken: String?
+    var nick: String?
+    
     
     override init() {
         super.init()
@@ -33,6 +35,10 @@ class FDAcountInfo: NSObject, NSCoding {
         self.imeis = aDecoder.decodeObject(forKey: "imeis") as? [String]
         self.expirationDate = aDecoder.decodeObject(forKey: "expirationDate") as? String
         self.accessToken = aDecoder.decodeObject(forKey: "accessToken") as? String
+        self.nick = aDecoder.decodeObject(forKey: "nick") as? String
+        if self.nick == nil || self.nick?.count == 0 {
+            self.nick = FDAcountInfo.lastLoginAccout()
+        }
     }
     
     func encode(with aCoder: NSCoder) {
@@ -40,6 +46,7 @@ class FDAcountInfo: NSObject, NSCoding {
         aCoder.encode(self.imeis, forKey: "imeis")
         aCoder.encode(self.expirationDate, forKey: "expirationDate")
         aCoder.encode(self.accessToken, forKey: "accessToken")
+        aCoder.encode(self.nick, forKey: "nick")
     }
     
     static func unarchive(_ fileName: String) -> FDAcountInfo? {

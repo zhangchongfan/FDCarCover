@@ -158,14 +158,17 @@ extension IoTMapViewController {
             if informations.count > 0 {
                 hud?.labelText = "獲取數據成功"
                 let locationInfo = FDLocationInfo(loacationInfo: informations[0])
-                mapRouteView?.destination = [Latitude: locationInfo.latitude!,Longitude: locationInfo.longitude!]
+                let location = CLLocation(latitude: locationInfo.latitude ?? 0.0, longitude: locationInfo.longitude ?? 0.0)
+                let chinaCoordinate = VPLocationConverter.wgs84(toGcj02: location.coordinate)
+                mapRouteView?.destination = [Latitude: chinaCoordinate.latitude,Longitude: chinaCoordinate.longitude]
             }else {
                 hud?.labelText = "沒有數據"
             }
         }else if status == "2" {
             hud?.labelText = "帳號不存在"
         }else if status == "3" {
-            hud?.labelText = "IMEI碼不存在"
+//            hud?.labelText = "IMEI碼不存在"
+            hud?.labelText = "沒有數據"
         }else {
             hud?.labelText = "服務器异常"
         }

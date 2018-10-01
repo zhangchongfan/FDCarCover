@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
 //            }
 //            
 //            let params = [
-//                "imei":"123456789123456","sim":"0952010210","time":"20180910073959","longitude":"121.276053","latitude":"30.189263","iotstate":"2","type":"1"
+//                "imei":"123456789123456","sim":"0952010210","time":"20180910073950","longitude":"113.86522218","latitude":"22.57428872","iotstate":"2","type":"1"
 //            ]
 //            serverManager.updateLocation(withParams: params, success: {[weak self] (response) in
 //                MBProgressHUD.fd_show(withText: "更新位置成功", mode: .text, add: self?.view)

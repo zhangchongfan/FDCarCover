@@ -31,3 +31,7 @@ let IotstateKey = "iotstate"
 
 let PairOperatoin = "operation"
 
+
+let Nick = "nick"
+
+
