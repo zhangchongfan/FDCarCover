@@ -23,6 +23,10 @@
 		5984AA082162061F001083C3 /* MineFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA062162061F001083C3 /* MineFriendViewController.swift */; };
 		5984AA092162061F001083C3 /* MineFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5984AA072162061F001083C3 /* MineFriendViewController.xib */; };
 		5984AA0B21620944001083C3 /* FDFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA0A21620944001083C3 /* FDFriendModel.swift */; };
+		5984AA0E216260B9001083C3 /* MineAddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA0C216260B9001083C3 /* MineAddFriendViewController.swift */; };
+		5984AA0F216260B9001083C3 /* MineAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5984AA0D216260B9001083C3 /* MineAddFriendViewController.xib */; };
+		5984AA11216268B5001083C3 /* FDAddFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA10216268B5001083C3 /* FDAddFriendModel.swift */; };
+		5984AA1321627169001083C3 /* MineManagerFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA1221627169001083C3 /* MineManagerFriendController.swift */; };
 		59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD021318C8500D1AF6A /* IoTMapViewController.swift */; };
 		59999CD3213282B900D1AF6A /* FDLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD2213282B900D1AF6A /* FDLocationInfo.swift */; };
 		59DA1B4E213BA5C20084B3A3 /* UMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B4D213BA5C20084B3A3 /* UMPush.framework */; };
@@ -80,6 +84,10 @@
 		5984AA062162061F001083C3 /* MineFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFriendViewController.swift; sourceTree = "<group>"; };
 		5984AA072162061F001083C3 /* MineFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFriendViewController.xib; sourceTree = "<group>"; };
 		5984AA0A21620944001083C3 /* FDFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDFriendModel.swift; sourceTree = "<group>"; };
+		5984AA0C216260B9001083C3 /* MineAddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAddFriendViewController.swift; sourceTree = "<group>"; };
+		5984AA0D216260B9001083C3 /* MineAddFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineAddFriendViewController.xib; sourceTree = "<group>"; };
+		5984AA10216268B5001083C3 /* FDAddFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAddFriendModel.swift; sourceTree = "<group>"; };
+		5984AA1221627169001083C3 /* MineManagerFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineManagerFriendController.swift; sourceTree = "<group>"; };
 		59999CD021318C8500D1AF6A /* IoTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTMapViewController.swift; sourceTree = "<group>"; };
 		59999CD2213282B900D1AF6A /* FDLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDLocationInfo.swift; sourceTree = "<group>"; };
 		59DA1B4D213BA5C20084B3A3 /* UMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMPush.framework; sourceTree = "<group>"; };
@@ -178,6 +186,9 @@
 				5984AA012161FA35001083C3 /* MineImeiViewController.xib */,
 				5984AA062162061F001083C3 /* MineFriendViewController.swift */,
 				5984AA072162061F001083C3 /* MineFriendViewController.xib */,
+				5984AA0C216260B9001083C3 /* MineAddFriendViewController.swift */,
+				5984AA0D216260B9001083C3 /* MineAddFriendViewController.xib */,
+				5984AA1221627169001083C3 /* MineManagerFriendController.swift */,
 				5984AA042161FD66001083C3 /* MineBaseViewController.swift */,
 			);
 			path = MineControllers;
@@ -250,6 +261,7 @@
 				59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */,
 				59999CD2213282B900D1AF6A /* FDLocationInfo.swift */,
 				5984AA0A21620944001083C3 /* FDFriendModel.swift */,
+				5984AA10216268B5001083C3 /* FDAddFriendModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -477,6 +489,7 @@
 			files = (
 				5984A9FF2161D4E7001083C3 /* MineNickViewController.xib in Resources */,
 				5984AA092162061F001083C3 /* MineFriendViewController.xib in Resources */,
+				5984AA0F216260B9001083C3 /* MineAddFriendViewController.xib in Resources */,
 				59F719E22014B3E20050DB1F /* LoginViewController.xib in Resources */,
 				67080C99200E12C400BBEFDF /* LaunchScreen.storyboard in Resources */,
 				5984AA032161FA35001083C3 /* MineImeiViewController.xib in Resources */,
@@ -555,11 +568,13 @@
 				67080CC120119AA200BBEFDF /* VPLocationManager.m in Sources */,
 				5984A9F92161BC72001083C3 /* MineViewController.swift in Sources */,
 				59E4BB8221314AE800BBE106 /* GCDAsyncUdpSocket.m in Sources */,
+				5984AA11216268B5001083C3 /* FDAddFriendModel.swift in Sources */,
 				591030DF2131361000DC8CBC /* FormatManager.swift in Sources */,
 				67080CA4200E132300BBEFDF /* FDBleManage.swift in Sources */,
 				59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */,
 				67080CB820117CDA00BBEFDF /* MapRouteView.swift in Sources */,
 				67080CBC20118A1E00BBEFDF /* ZCUIView+setRect.swift in Sources */,
+				5984AA1321627169001083C3 /* MineManagerFriendController.swift in Sources */,
 				67080CC72011D9E300BBEFDF /* FDBaseNavigationController.swift in Sources */,
 				5984AA022161FA35001083C3 /* MineImeiViewController.swift in Sources */,
 				67080CC42011C13600BBEFDF /* MBProgressHUD.m in Sources */,
@@ -582,6 +597,7 @@
 				67080CB520117C8900BBEFDF /* MapViewController.swift in Sources */,
 				67080CA9200E137500BBEFDF /* MainViewController.swift in Sources */,
 				59999CD3213282B900D1AF6A /* FDLocationInfo.swift in Sources */,
+				5984AA0E216260B9001083C3 /* MineAddFriendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,4 +36,6 @@
 
 - (void)updateProfileWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure;
 
+- (void)friendmanagerWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure;
+
 @end

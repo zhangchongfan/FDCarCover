@@ -61,6 +61,10 @@ class MineNickViewController: UIViewController {
                 .archive(FDAcountInfo.lastLoginAccout()!)
             MBProgressHUD
                 .fd_show(withText: "保存成功", mode: .text, add: self.view)
+            delay(1) {
+                self.navigationController?
+                    .popViewController(animated: true)
+            }
         }else {
             MBProgressHUD
                 .fd_show(withText: "服務器异常", mode: .text, add: self.view)

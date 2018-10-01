@@ -81,10 +81,12 @@ class MineFriendViewController: MineBaseViewController {
             MBProgressHUD
                 .fd_show(withText: "服務器异常", mode: .text, add: self.view)
         }
+        
     }
     
     @objc func addFriend(_ sender: UIButton) {
-        
+        navigationController?
+            .pushViewController(MineAddFriendViewController(nibName: "MineAddFriendViewController", bundle: Bundle.main), animated: true)
     }
     
 }
@@ -125,10 +127,8 @@ extension MineFriendViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        var vc: UIViewController = MineNickViewController(nibName: "MineNickViewController", bundle: Bundle.main)
-        if indexPath.row == 1 {
-            vc = MineImeiViewController(nibName: "MineImeiViewController", bundle: Bundle.main)
-        }
+        let vc: MineManagerFriendController = MineManagerFriendController()
+        vc.friendModel = accountInfo.friends![indexPath.row]
         navigationController?
             .pushViewController(vc, animated: true)
     }

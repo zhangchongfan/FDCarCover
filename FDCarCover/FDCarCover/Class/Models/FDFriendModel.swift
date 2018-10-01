@@ -15,6 +15,12 @@ class FDFriendModel: NSObject {
     var addstate: String?
     var friendagree: String?
     var meagree: String?
+    var mesend: String?
+ 
+    override init() {
+        super.init()
+        
+    }
     
     init(_ dictionary: [String : Any]) {
         super.init()

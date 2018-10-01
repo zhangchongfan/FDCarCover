@@ -18,4 +18,5 @@ class MineBaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
 }

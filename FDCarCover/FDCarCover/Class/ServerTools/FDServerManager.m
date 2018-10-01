@@ -21,7 +21,7 @@ static NSString *IOTPostLocationUrl = @"iotinformation";
 static NSString *PairIMEIUrl = @"bindingimei";
 static NSString *UpdateProfileUrl = @"updateuserinfo";
 static NSString *GetProfileUrl = @"getuserinfo";
-
+static NSString *FriendmanagerUrl = @"friendmanager";
 
 @interface FDServerManager()
 
@@ -172,6 +172,19 @@ static NSString *GetProfileUrl = @"getuserinfo";
 
 - (void)pairIMEIWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure {
     NSString *requestUrl = [self requestURLWithUrl:PairIMEIUrl];
+    [self.afnManager POST:requestUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (sucess) {
+            sucess(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure();
+        }
+    }];
+}
+
+- (void)friendmanagerWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure {
+    NSString *requestUrl = [self requestURLWithUrl:FriendmanagerUrl];
     [self.afnManager POST:requestUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (sucess) {
             sucess(responseObject);
