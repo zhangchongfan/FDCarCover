@@ -20,6 +20,8 @@ static NSString *IOTLocationsUrl = @"iotlocations";
 static NSString *IOTPostLocationUrl = @"iotinformation";
 static NSString *PairIMEIUrl = @"bindingimei";
 static NSString *UpdateProfileUrl = @"updateuserinfo";
+static NSString *GetProfileUrl = @"getuserinfo";
+
 
 @interface FDServerManager()
 
@@ -79,6 +81,19 @@ static NSString *UpdateProfileUrl = @"updateuserinfo";
 
 - (void)loginWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure {
     NSString *requestUrl = [self requestURLWithUrl:LoginUrl];
+    [self.afnManager POST:requestUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (sucess) {
+            sucess(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure();
+        }
+    }];
+}
+
+- (void)getProfileWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure {
+    NSString *requestUrl = [self requestURLWithUrl:GetProfileUrl];
     [self.afnManager POST:requestUrl parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (sucess) {
             sucess(responseObject);

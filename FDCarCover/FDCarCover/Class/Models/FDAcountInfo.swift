@@ -16,7 +16,7 @@ class FDAcountInfo: NSObject, NSCoding {
     var expirationDate: String?
     var accessToken: String?
     var nick: String?
-    
+    var friends: [FDFriendModel]?
     
     override init() {
         super.init()
@@ -39,6 +39,18 @@ class FDAcountInfo: NSObject, NSCoding {
         if self.nick == nil || self.nick?.count == 0 {
             self.nick = FDAcountInfo.lastLoginAccout()
         }
+    }
+    
+    func updateProfile(_ userInfo: [AnyHashable : Any]) {
+        self.imeis = userInfo[ImeisKey] as? [String]
+        self.nick = userInfo[NickKey] as? String
+        var friends: [FDFriendModel] = []
+        let friendArray = userInfo[FriendsKey] as? [[String : Any]]
+        for dict in friendArray ?? [] {
+            let friendModel = FDFriendModel(dict)
+            friends.append(friendModel)
+        }
+        self.friends = friends
     }
     
     func encode(with aCoder: NSCoder) {
@@ -92,6 +104,9 @@ class FDAcountInfo: NSObject, NSCoding {
     static func obtainIoTLoactions(_ type: String, count: String) -> [String : String] {
         let accountInfo: FDAcountInfo = FDAcountInfo.unarchive(FDAcountInfo.lastLoginAccout()!)!
         guard let imeis = accountInfo.imeis else {
+            return [:]
+        }
+        if imeis.count == 0 {
             return [:]
         }
 //        return [AccountKey: FDAcountInfo.lastLoginAccout()!,

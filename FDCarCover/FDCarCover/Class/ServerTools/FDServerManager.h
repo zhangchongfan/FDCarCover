@@ -32,4 +32,8 @@
 
 - (void)pairIMEIWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure;
 
+- (void)getProfileWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure;
+
+- (void)updateProfileWithParams:(NSDictionary *)params success:(void(^)(NSDictionary *result))sucess failre:(void(^)(void))failure;
+
 @end

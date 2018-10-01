@@ -33,7 +33,7 @@ class MineNickViewController: UIViewController {
             MBProgressHUD.fd_show(withText: "網絡异常", mode: .text, add: view)
         }else {
             FDServerManager.share()?
-                .updateLocation(withParams: updateProfileParams(), success: { [weak self] (response) in
+                .updateProfile(withParams: updateProfileParams(), success: { [weak self] (response) in
                 self?.handleUpdateNickResult(response)
             }, failre: {[weak self] in
                 MBProgressHUD
@@ -43,7 +43,7 @@ class MineNickViewController: UIViewController {
     }
     
     func updateProfileParams() -> [String : String] {
-        return [AccountKey: FDAcountInfo.lastLoginAccout() ?? "", Nick: nickTextField.text ?? "", CarTypeKey: "1"]
+        return [AccountKey: FDAcountInfo.lastLoginAccout() ?? "", NickKey: nickTextField.text ?? "", CarTypeKey: "1"]
     }
     
     

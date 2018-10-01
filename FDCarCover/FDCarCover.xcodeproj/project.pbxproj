@@ -17,6 +17,12 @@
 		5984A9F92161BC72001083C3 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984A9F82161BC72001083C3 /* MineViewController.swift */; };
 		5984A9FE2161D4E7001083C3 /* MineNickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984A9FC2161D4E7001083C3 /* MineNickViewController.swift */; };
 		5984A9FF2161D4E7001083C3 /* MineNickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5984A9FD2161D4E7001083C3 /* MineNickViewController.xib */; };
+		5984AA022161FA35001083C3 /* MineImeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA002161FA35001083C3 /* MineImeiViewController.swift */; };
+		5984AA032161FA35001083C3 /* MineImeiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5984AA012161FA35001083C3 /* MineImeiViewController.xib */; };
+		5984AA052161FD66001083C3 /* MineBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA042161FD66001083C3 /* MineBaseViewController.swift */; };
+		5984AA082162061F001083C3 /* MineFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA062162061F001083C3 /* MineFriendViewController.swift */; };
+		5984AA092162061F001083C3 /* MineFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5984AA072162061F001083C3 /* MineFriendViewController.xib */; };
+		5984AA0B21620944001083C3 /* FDFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA0A21620944001083C3 /* FDFriendModel.swift */; };
 		59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD021318C8500D1AF6A /* IoTMapViewController.swift */; };
 		59999CD3213282B900D1AF6A /* FDLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD2213282B900D1AF6A /* FDLocationInfo.swift */; };
 		59DA1B4E213BA5C20084B3A3 /* UMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B4D213BA5C20084B3A3 /* UMPush.framework */; };
@@ -68,6 +74,12 @@
 		5984A9F82161BC72001083C3 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		5984A9FC2161D4E7001083C3 /* MineNickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineNickViewController.swift; sourceTree = "<group>"; };
 		5984A9FD2161D4E7001083C3 /* MineNickViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineNickViewController.xib; sourceTree = "<group>"; };
+		5984AA002161FA35001083C3 /* MineImeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineImeiViewController.swift; sourceTree = "<group>"; };
+		5984AA012161FA35001083C3 /* MineImeiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineImeiViewController.xib; sourceTree = "<group>"; };
+		5984AA042161FD66001083C3 /* MineBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineBaseViewController.swift; sourceTree = "<group>"; };
+		5984AA062162061F001083C3 /* MineFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFriendViewController.swift; sourceTree = "<group>"; };
+		5984AA072162061F001083C3 /* MineFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFriendViewController.xib; sourceTree = "<group>"; };
+		5984AA0A21620944001083C3 /* FDFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDFriendModel.swift; sourceTree = "<group>"; };
 		59999CD021318C8500D1AF6A /* IoTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTMapViewController.swift; sourceTree = "<group>"; };
 		59999CD2213282B900D1AF6A /* FDLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDLocationInfo.swift; sourceTree = "<group>"; };
 		59DA1B4D213BA5C20084B3A3 /* UMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMPush.framework; sourceTree = "<group>"; };
@@ -162,6 +174,11 @@
 				5984A9F82161BC72001083C3 /* MineViewController.swift */,
 				5984A9FC2161D4E7001083C3 /* MineNickViewController.swift */,
 				5984A9FD2161D4E7001083C3 /* MineNickViewController.xib */,
+				5984AA002161FA35001083C3 /* MineImeiViewController.swift */,
+				5984AA012161FA35001083C3 /* MineImeiViewController.xib */,
+				5984AA062162061F001083C3 /* MineFriendViewController.swift */,
+				5984AA072162061F001083C3 /* MineFriendViewController.xib */,
+				5984AA042161FD66001083C3 /* MineBaseViewController.swift */,
 			);
 			path = MineControllers;
 			sourceTree = "<group>";
@@ -232,6 +249,7 @@
 			children = (
 				59F719E42014C3CA0050DB1F /* FDAcountInfo.swift */,
 				59999CD2213282B900D1AF6A /* FDLocationInfo.swift */,
+				5984AA0A21620944001083C3 /* FDFriendModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,8 +476,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5984A9FF2161D4E7001083C3 /* MineNickViewController.xib in Resources */,
+				5984AA092162061F001083C3 /* MineFriendViewController.xib in Resources */,
 				59F719E22014B3E20050DB1F /* LoginViewController.xib in Resources */,
 				67080C99200E12C400BBEFDF /* LaunchScreen.storyboard in Resources */,
+				5984AA032161FA35001083C3 /* MineImeiViewController.xib in Resources */,
 				67080C96200E12C400BBEFDF /* Assets.xcassets in Resources */,
 				67080C94200E12C400BBEFDF /* Main.storyboard in Resources */,
 				67080CAA200E137500BBEFDF /* MainViewController.xib in Resources */,
@@ -530,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59E4BB8321314AE800BBE106 /* GCDAsyncSocket.m in Sources */,
+				5984AA052161FD66001083C3 /* MineBaseViewController.swift in Sources */,
 				59F719E12014B3E20050DB1F /* LoginViewController.swift in Sources */,
 				67080CC120119AA200BBEFDF /* VPLocationManager.m in Sources */,
 				5984A9F92161BC72001083C3 /* MineViewController.swift in Sources */,
@@ -540,6 +561,7 @@
 				67080CB820117CDA00BBEFDF /* MapRouteView.swift in Sources */,
 				67080CBC20118A1E00BBEFDF /* ZCUIView+setRect.swift in Sources */,
 				67080CC72011D9E300BBEFDF /* FDBaseNavigationController.swift in Sources */,
+				5984AA022161FA35001083C3 /* MineImeiViewController.swift in Sources */,
 				67080CC42011C13600BBEFDF /* MBProgressHUD.m in Sources */,
 				67080CA5200E132300BBEFDF /* FDPeripherModel.swift in Sources */,
 				67080CCC2011E66900BBEFDF /* VPLocationConverter.m in Sources */,
@@ -548,10 +570,12 @@
 				59E4BB7A21314A3B00BBE106 /* ZCNSObject+Dispatch.swift in Sources */,
 				67080C8F200E12C400BBEFDF /* AppDelegate.swift in Sources */,
 				67080CC92011E2C100BBEFDF /* FDConstants.swift in Sources */,
+				5984AA0B21620944001083C3 /* FDFriendModel.swift in Sources */,
 				591030DC2131307200DC8CBC /* WYPHelper.m in Sources */,
 				59E4BB8521314AF100BBE106 /* GBGCDAsyncSocketManager.swift in Sources */,
 				677B725020132D2C00AB1371 /* MapTool.m in Sources */,
 				591030D521311C2D00DC8CBC /* FDServerManager.m in Sources */,
+				5984AA082162061F001083C3 /* MineFriendViewController.swift in Sources */,
 				5984A9FE2161D4E7001083C3 /* MineNickViewController.swift in Sources */,
 				5975C37A20176A2C0035E564 /* FDDataHandle.swift in Sources */,
 				591030E121313A6900DC8CBC /* FDPublicKeys.swift in Sources */,

@@ -46,9 +46,9 @@ class RegisterViewController: UIViewController {
         else if FormatManager.justFormat(accountTextField.text, minlength: 8, maxlength: 15) == false {//账号格式不正确
             MBProgressHUD.fd_show(withText: "賬號格式不正確", mode: .text, add: view)
         }
-        else if FormatManager.justFormat(imeiTextField.text, minlength: 15, maxlength: 15) == false {
-            MBProgressHUD.fd_show(withText: "IMEI碼格式不正確", mode: .text, add: view)
-        }
+//        else if FormatManager.justFormat(imeiTextField.text, minlength: 15, maxlength: 15) == false {
+//            MBProgressHUD.fd_show(withText: "IMEI碼格式不正確", mode: .text, add: view)
+//        }
         else if FormatManager.justFormat(passwordTextField.text, minlength: 4, maxlength: 4) == false {
             MBProgressHUD.fd_show(withText: "密碼格式不正確", mode: .text, add: view)
         }
@@ -74,12 +74,13 @@ class RegisterViewController: UIViewController {
     //获取注册参数
     func registerParams() -> [String : String] {
         guard let account = accountTextField.text,
-            let imei = imeiTextField.text,
+//            let imei = imeiTextField.text,
             let password = passwordTextField.text
         else {
             return [:]
         }
-        return [AccountKey: account, ImeiKey: imei, PasswordKey: password, CarTypeKey: "1"]
+//        return [AccountKey: account, ImeiKey: imei, PasswordKey: password, CarTypeKey: "1"]
+        return [AccountKey: account, PasswordKey: password, CarTypeKey: "1"]
     }
     
     func handleRegisterData(_ responser: [AnyHashable : Any]?) {

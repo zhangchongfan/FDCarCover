@@ -88,7 +88,12 @@ extension MineViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             cell?.detailTextLabel?.text = accountInfo.nick
         }else if indexPath.row == 1 {
-            cell?.detailTextLabel?.text = accountInfo.imeis?[0]
+            let imeis = accountInfo.imeis ?? []
+            if imeis.count > 0 {
+                cell?.detailTextLabel?.text = imeis[0]
+            }else {
+                cell?.detailTextLabel?.text = ""
+            }
         }
         
         
@@ -97,7 +102,12 @@ extension MineViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = MineNickViewController(nibName: "MineNickViewController", bundle: Bundle.main)
+        var vc: UIViewController = MineNickViewController(nibName: "MineNickViewController", bundle: Bundle.main)
+        if indexPath.row == 1 {
+            vc = MineImeiViewController(nibName: "MineImeiViewController", bundle: Bundle.main)
+        }else if indexPath.row == 2 {
+            vc = MineFriendViewController(nibName: "MineFriendViewController", bundle: Bundle.main)
+        }
         navigationController?
             .pushViewController(vc, animated: true)
     }
