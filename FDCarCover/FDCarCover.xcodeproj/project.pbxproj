@@ -27,6 +27,7 @@
 		5984AA0F216260B9001083C3 /* MineAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5984AA0D216260B9001083C3 /* MineAddFriendViewController.xib */; };
 		5984AA11216268B5001083C3 /* FDAddFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA10216268B5001083C3 /* FDAddFriendModel.swift */; };
 		5984AA1321627169001083C3 /* MineManagerFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA1221627169001083C3 /* MineManagerFriendController.swift */; };
+		5984AA1521631B89001083C3 /* FDUpdateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AA1421631B89001083C3 /* FDUpdateProfile.swift */; };
 		59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD021318C8500D1AF6A /* IoTMapViewController.swift */; };
 		59999CD3213282B900D1AF6A /* FDLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59999CD2213282B900D1AF6A /* FDLocationInfo.swift */; };
 		59DA1B4E213BA5C20084B3A3 /* UMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DA1B4D213BA5C20084B3A3 /* UMPush.framework */; };
@@ -88,6 +89,7 @@
 		5984AA0D216260B9001083C3 /* MineAddFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineAddFriendViewController.xib; sourceTree = "<group>"; };
 		5984AA10216268B5001083C3 /* FDAddFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAddFriendModel.swift; sourceTree = "<group>"; };
 		5984AA1221627169001083C3 /* MineManagerFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineManagerFriendController.swift; sourceTree = "<group>"; };
+		5984AA1421631B89001083C3 /* FDUpdateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDUpdateProfile.swift; sourceTree = "<group>"; };
 		59999CD021318C8500D1AF6A /* IoTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTMapViewController.swift; sourceTree = "<group>"; };
 		59999CD2213282B900D1AF6A /* FDLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDLocationInfo.swift; sourceTree = "<group>"; };
 		59DA1B4D213BA5C20084B3A3 /* UMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMPush.framework; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				591030D421311C2D00DC8CBC /* FDServerManager.m */,
 				591030E021313A6900DC8CBC /* FDPublicKeys.swift */,
 				59E4BB8421314AF100BBE106 /* GBGCDAsyncSocketManager.swift */,
+				5984AA1421631B89001083C3 /* FDUpdateProfile.swift */,
 			);
 			path = ServerTools;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				5984AA11216268B5001083C3 /* FDAddFriendModel.swift in Sources */,
 				591030DF2131361000DC8CBC /* FormatManager.swift in Sources */,
 				67080CA4200E132300BBEFDF /* FDBleManage.swift in Sources */,
+				5984AA1521631B89001083C3 /* FDUpdateProfile.swift in Sources */,
 				59999CD121318C8500D1AF6A /* IoTMapViewController.swift in Sources */,
 				67080CB820117CDA00BBEFDF /* MapRouteView.swift in Sources */,
 				67080CBC20118A1E00BBEFDF /* ZCUIView+setRect.swift in Sources */,

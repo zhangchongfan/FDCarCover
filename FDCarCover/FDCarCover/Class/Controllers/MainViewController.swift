@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
         
         heartTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(addMoveHeart), userInfo: nil, repeats: true)
         RunLoop.main.add(heartTimer!, forMode: RunLoopMode.commonModes)
-        
+        FDUpdateProfile.updateProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {

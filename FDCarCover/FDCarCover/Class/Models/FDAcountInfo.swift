@@ -29,18 +29,6 @@ class FDAcountInfo: NSObject, NSCoding {
         self.accessToken = userInfo[AccessTokenKey] as? String
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init()
-        self.userID = aDecoder.decodeObject(forKey: "userID") as? String
-        self.imeis = aDecoder.decodeObject(forKey: "imeis") as? [String]
-        self.expirationDate = aDecoder.decodeObject(forKey: "expirationDate") as? String
-        self.accessToken = aDecoder.decodeObject(forKey: "accessToken") as? String
-        self.nick = aDecoder.decodeObject(forKey: "nick") as? String
-        if self.nick == nil || self.nick?.count == 0 {
-            self.nick = FDAcountInfo.lastLoginAccout()
-        }
-    }
-    
     func updateProfile(_ userInfo: [AnyHashable : Any]) {
         self.imeis = userInfo[ImeisKey] as? [String]
         self.nick = userInfo[NickKey] as? String
@@ -53,12 +41,38 @@ class FDAcountInfo: NSObject, NSCoding {
         self.friends = friends
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init()
+        self.userID = aDecoder.decodeObject(forKey: "userID") as? String
+        self.imeis = aDecoder.decodeObject(forKey: "imeis") as? [String]
+        self.expirationDate = aDecoder.decodeObject(forKey: "expirationDate") as? String
+        self.accessToken = aDecoder.decodeObject(forKey: "accessToken") as? String
+        self.nick = aDecoder.decodeObject(forKey: "nick") as? String
+        if self.nick == nil || self.nick?.count == 0 {
+            self.nick = FDAcountInfo.lastLoginAccout()
+        }
+        
+        let friendArray: [[String : String]] = (aDecoder.decodeObject(forKey: "friends") as? [[String : String]]) ?? []
+        var friendModels: [FDFriendModel] = []
+        for dict in friendArray {
+            friendModels.append(FDFriendModel(dict))
+        }
+        self.friends = friendModels
+    }
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.userID, forKey: "userID")
         aCoder.encode(self.imeis, forKey: "imeis")
         aCoder.encode(self.expirationDate, forKey: "expirationDate")
         aCoder.encode(self.accessToken, forKey: "accessToken")
         aCoder.encode(self.nick, forKey: "nick")
+        
+        var friendArray: [[String : String]] = []
+        for friendModel in self.friends ?? [] {
+            friendArray
+                .append(friendModel.dictionary())
+        }
+        aCoder.encode(friendArray, forKey: "friends")
     }
     
     static func unarchive(_ fileName: String) -> FDAcountInfo? {

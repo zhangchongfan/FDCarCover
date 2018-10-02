@@ -24,9 +24,26 @@ class FDFriendModel: NSObject {
     
     init(_ dictionary: [String : Any]) {
         super.init()
-        self.setValuesForKeys(dictionary)
+        account = dictionary[AccountKey] as? String
+        nick = dictionary[NickKey] as? String
+        addstate = dictionary[FriendAddStateKey] as? String
+        friendagree = dictionary["friendagree"] as? String
+        meagree = dictionary["meagree"] as? String
+        mesend = dictionary["mesend"] as? String
+//        self.setValuesForKeys(dictionary)
     }
 
+    func dictionary() -> [String : String] {
+        return [
+            AccountKey: account ?? "",
+            NickKey: nick ?? "",
+            FriendAddStateKey: addstate ?? "",
+            "friendagree": friendagree ?? "",
+            "meagree": meagree ?? "",
+            "mesend": mesend ?? ""
+        ]
+    }
+    
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print("FDFriendModel key: \(key) 不存在")
     }

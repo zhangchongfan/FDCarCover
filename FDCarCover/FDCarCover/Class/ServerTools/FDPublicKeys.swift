@@ -35,3 +35,8 @@ let PairOperatoin = "operation"
 let NickKey = "nick"
 let FriendsKey = "friends"
 
+let FriendAccountKey = "friendaccount"
+let FriendOperationKey = "operation"
+let FriendMeSendKey = "mesend"
+let FriendMeReceiveKey = "mereceive"
+let FriendAddStateKey = "addstate"

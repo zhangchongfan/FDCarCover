@@ -92,7 +92,13 @@ extension MineViewController: UITableViewDelegate, UITableViewDataSource {
             if imeis.count > 0 {
                 cell?.detailTextLabel?.text = imeis[0]
             }else {
-                cell?.detailTextLabel?.text = ""
+                cell?.detailTextLabel?.text = "未綁定"
+            }
+        }else if indexPath.row == 2 {
+            if let friends = accountInfo.friends {
+                cell?.detailTextLabel?.text = "\(friends.count)人"
+            }else {
+                cell?.detailTextLabel?.text = "0人"
             }
         }
         

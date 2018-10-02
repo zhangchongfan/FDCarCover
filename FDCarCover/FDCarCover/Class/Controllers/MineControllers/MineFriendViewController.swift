@@ -105,16 +105,18 @@ extension MineFriendViewController: UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
             cell?.accessoryType = .disclosureIndicator
-            let lable = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
-            lable.tag = 1
-            lable.textAlignment = .right
-            cell?.accessoryView = lable
+            cell?.accessoryType = .disclosureIndicator
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
+            label.tag = 1
+            label.textAlignment = .right
+            label.font = UIFont.systemFont(ofSize: 15)
+            cell?.accessoryView = label
         }
         let model = accountInfo.friends![indexPath.row]
         
         cell?.textLabel?.text = model.nick ?? model.account
         cell?.detailTextLabel?.text = (model.addstate == "3" && model.friendagree == "1" && model.meagree == "1") ? "你可以接受好友的車罩資訊" : "你當前不能接受好友的車罩資訊"
-        let label = cell?.contentView.viewWithTag(1) as! UILabel
+        let label = cell?.accessoryView as! UILabel
         if model.addstate == "3" {
             label.text = "已添加"
         }else if model.addstate == "2" {

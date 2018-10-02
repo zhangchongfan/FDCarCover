@@ -158,7 +158,7 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(rememberBtn.isSelected, forKey: FDLastRememberPassword)
         UserDefaults.standard.set(autoLoginBtn.isSelected, forKey: FDLastAutoLogin)
         UserDefaults.standard.synchronize()
-        AppDelegate.shareDelegate().setMainControllerForRoot()
+         AppDelegate.shareDelegate().setMainControllerForRoot()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
