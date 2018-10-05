@@ -35,7 +35,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var moveBtn: UIButton!
     
-    var moveTime: String?
+    var iotMeAndFriendParams: [[String : String]] = []
+    var iotLocationLastRecord: [String : FDLocationInfo] = [:]
+    
     
     var heartTimer: Timer?
     
@@ -127,6 +129,13 @@ class MainViewController: UIViewController {
             forwardSettingLocation()
             return
         }
+        
+        let accountInfo = FDAcountInfo.unarchive(FDAcountInfo.lastLoginAccout()!)
+        
+        if accountInfo?.imeis?.count == 0 {
+            MBProgressHUD.fd_show(withText: "沒有綁定IMEI碼", mode: .text, add: view).hide(true, afterDelay: 1.0)
+            return
+        }
         let mapViewController = IoTMapViewController()
         mapViewController.type = 1
 //        mapViewController.destinationDict = locationDict
@@ -139,16 +148,40 @@ class MainViewController: UIViewController {
             forwardSettingLocation()
             return
         }
-        if sender.isSelected {
-            if let time = moveTime {
-                FDLocationInfo.saveLastMoveInfomation(time)
-            }
-            sender.isSelected = false
+        
+        iotMeAndFriendParams = FDAcountInfo.obtainMeAndFriendPairParams("2")
+        
+        if iotMeAndFriendParams.count == 0 {
+            MBProgressHUD.fd_show(withText: "您當前的帳號沒有可査詢車罩資訊", mode: .text, add: view).hide(true, afterDelay: 1.0)
+            return
         }
-        let mapViewController = IoTMapViewController()
-        mapViewController.type = 2
-        navigationController?
-            .pushViewController(mapViewController, animated: true)
+        let alertController = UIAlertController(title: "選擇要查看的帳號(紅色表示提醒後未查看)", message: nil, preferredStyle: .actionSheet)
+        for dict in iotMeAndFriendParams {
+            var alertActionStyle = UIAlertActionStyle.default
+            let locationInfo = iotLocationLastRecord[dict[AccountKey]!]
+            if locationInfo != nil {
+                if FDLocationInfo.isNewMoveLocation(locationInfo!.time!, account: dict[AccountKey]!) {
+                    alertActionStyle = UIAlertActionStyle.destructive
+                }
+            }
+            let alertAction = UIAlertAction(title: dict[AccountKey], style: alertActionStyle) {[weak self] (alertAction) in
+                if sender.isSelected {
+                    if let time = locationInfo?.time {
+                        FDLocationInfo.saveLastMoveInfomation(time, account: dict[AccountKey]!)
+                    }
+                    sender.isSelected = false
+                }
+                let mapViewController = IoTMapViewController()
+                mapViewController.type = 2
+                mapViewController.iotRequestPramas = dict
+                self?.navigationController?
+                    .pushViewController(mapViewController, animated: true)
+            }
+            alertController.addAction(alertAction)
+        }
+        let cancelAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAlertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     
@@ -345,6 +378,59 @@ extension MainViewController:UITableViewDelegate, UITableViewDataSource {
     
 }
 
+//处理服务器数据
+extension MainViewController {
+    @objc func addMoveHeart() {
+        guard let serverManager = FDServerManager.share() else {
+            //                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
+            return
+        }
+        if serverManager.netNormal == false {
+            
+        }else {
+            let allParams = FDAcountInfo.obtainMeAndFriendPairParams("2")
+            if allParams.count > 0 {
+                for params in allParams {
+                    if params.count == 0 {
+                        continue
+                    }
+                    serverManager.iotLocations(withParams: params, success: {[weak self] (response) in
+                        self?.handleLocations(response, account: (params[AccountKey])!)
+                        }, failre: {[weak self] in
+                            
+                    })
+                }
+            }
+        }
+    }
+    
+    func handleLocations(_ responser: [AnyHashable : Any]?, account: String) {
+        guard let data = responser else {
+            return
+        }
+        let status = data[StatusKey] as! String
+        if status == "1" {
+            guard let informations: [[String : Any]] = data[InformationsKey] as? [[String : Any]] else {
+                return
+            }
+            if informations.count > 0 {
+                let locationInfo = FDLocationInfo(loacationInfo: informations[0])
+                if FDLocationInfo.isNewMoveLocation(locationInfo.time!, account: account) {
+                    iotLocationLastRecord[account] = locationInfo
+                    self.moveBtn.isSelected = true
+                }
+            }else {
+            }
+        }else if status == "2" {
+            //            hud?.labelText = "帳號不存在"
+        }else if status == "3" {
+            //            hud?.labelText = "IMEI碼不存在"
+        }else {
+            //            hud?.labelText = "服務器异常"
+        }
+    }
+}
+
 extension MainViewController: UIAlertViewDelegate {
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 1 && alertView.tag == 0 {//前往设置GPS权限
@@ -367,51 +453,23 @@ extension MainViewController: UIAlertViewDelegate {
     }
 }
 
-//处理服务器数据
-extension MainViewController {
-    @objc func addMoveHeart() {
-            guard let serverManager = FDServerManager.share() else {
-                //                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
-                return
-            }
-            if serverManager.netNormal == false {
-                
-            }else {
-                let params = FDAcountInfo.obtainIoTLoactions("2", count: "1")
-                if params.count == 0 {
-                    return
-                }
-                serverManager.iotLocations(withParams: params, success: {[weak self] (response) in
-                    self?.handleLocations(response)
-                    }, failre: {[weak self] in
-                        
-                })
-            }
+extension MainViewController : UIActionSheetDelegate {
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        
     }
     
-    func handleLocations(_ responser: [AnyHashable : Any]?) {
-        guard let data = responser else {
-            return
-        }
-        let status = data[StatusKey] as! String
-        if status == "1" {
-            guard let informations: [[String : Any]] = data[InformationsKey] as? [[String : Any]] else {
-                return
-            }
-            if informations.count > 0 {
-                let locationInfo = FDLocationInfo(loacationInfo: informations[0])
-                if FDLocationInfo.isNewMoveLocation(locationInfo.time!) {
-                    self.moveTime = locationInfo.time!
-                    self.moveBtn.isSelected = true
+    func didPresent(_ actionSheet: UIActionSheet) {
+        for i in 0..<iotMeAndFriendParams.count {
+            let dict = iotMeAndFriendParams[i]
+            if let locationInfo = iotLocationLastRecord[dict[AccountKey]!] {
+                if FDLocationInfo.isNewMoveLocation(locationInfo.time!, account: dict[AccountKey]!) {
+                    let btn = actionSheet.viewWithTag(i) as! UIButton
+                    btn.setTitleColor(UIColor.red, for: .normal)
                 }
-            }else {
             }
-        }else if status == "2" {
-//            hud?.labelText = "帳號不存在"
-        }else if status == "3" {
-//            hud?.labelText = "IMEI碼不存在"
-        }else {
-//            hud?.labelText = "服務器异常"
+            let btn = actionSheet.viewWithTag(i) as! UIButton
+            btn.setTitleColor(UIColor.red, for: .normal)
         }
     }
 }
+

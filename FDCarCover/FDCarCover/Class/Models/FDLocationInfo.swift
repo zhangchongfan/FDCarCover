@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 class FDLocationInfo: NSObject {
+    var account: String?
     var time: String?
     var longitude: Double?
     var latitude: Double?
@@ -27,13 +28,13 @@ class FDLocationInfo: NSObject {
         self.iotstate = Int(loacationInfo["iotstate"] as! String)
     }
     
-    static func saveLastMoveInfomation(_ time: String) {
-        UserDefaults.standard.set(time, forKey: "IOTMoveTime")
+    static func saveLastMoveInfomation(_ time: String, account: String) {
+        UserDefaults.standard.set(time, forKey: "IOTMoveTime" + account)
         UserDefaults.standard.synchronize()
     }
     
-    static func isNewMoveLocation(_ newTime: String) -> Bool {
-        let lastTime = UserDefaults.standard.string(forKey: "IOTMoveTime")
+    static func isNewMoveLocation(_ newTime: String, account: String) -> Bool {
+        let lastTime = UserDefaults.standard.string(forKey: "IOTMoveTime" + account)
         guard let time = lastTime else {
             return true
         }

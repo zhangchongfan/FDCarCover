@@ -16,7 +16,8 @@ class FDFriendModel: NSObject {
     var friendagree: String?
     var meagree: String?
     var mesend: String?
- 
+    var imeis: [String]?
+    
     override init() {
         super.init()
         
@@ -30,6 +31,7 @@ class FDFriendModel: NSObject {
         friendagree = dictionary["friendagree"] as? String
         meagree = dictionary["meagree"] as? String
         mesend = dictionary["mesend"] as? String
+        imeis = dictionary[ImeisKey] as? [String]
 //        self.setValuesForKeys(dictionary)
     }
 
@@ -42,6 +44,23 @@ class FDFriendModel: NSObject {
             "meagree": meagree ?? "",
             "mesend": mesend ?? ""
         ]
+    }
+    
+    func iotLocationParams(_ type: String) -> [String : String]? {
+        if meagree == "1" && friendagree == "1" {
+            if let iotImeis = imeis {
+                if iotImeis.count > 0 {
+                    let params = [AccountKey: account!,
+                                  ImeiKey: iotImeis[0],
+                                  DataTypeKey: type,
+                                  CarTypeKey: "1",
+                                  LocationCountKey: "1"
+                    ]
+                    return params
+                }
+            }
+        }
+        return nil
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {

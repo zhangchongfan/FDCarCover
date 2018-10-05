@@ -17,6 +17,7 @@ class IoTMapViewController: UIViewController {
     
     //0和2是使用属性destinationDict，2是车罩被移动，1是获取车罩当前位置
     var type: NSInteger = 0
+    var iotRequestPramas: [String : String]?
     
     let walkBtn = UIButton(type: .custom)
     let driveBtn = UIButton(type: .custom)
@@ -30,6 +31,11 @@ class IoTMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if type == 1 {
+            title = "當前位置"
+        }else {
+            title = iotRequestPramas?[AccountKey]
+        }
         view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
         setMapViewControllerUI()
@@ -126,7 +132,11 @@ extension IoTMapViewController {
                 hud?.labelText = "網絡异常，請檢查"
                 hud?.hide(true, afterDelay: 1)
             }else {
-                let params = FDAcountInfo.obtainIoTLoactions(String(type), count: "1")
+                var params = FDAcountInfo.obtainIoTLoactions(String(type), count: "1")
+                if type == 2 {
+                    params = iotRequestPramas!
+                }
+                
                 if params.count == 0 {
                     hud?.labelText = "帳號沒有綁定IMEI碼"
                     hud?.hide(true, afterDelay: 1)

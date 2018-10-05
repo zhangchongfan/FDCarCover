@@ -150,8 +150,39 @@ class FDAcountInfo: NSObject, NSCoding {
         //        ]
         return [AccountKey: FDAcountInfo.lastLoginAccout()!,
                 ImeiKey: imeis[0],
-                PairOperatoin: type,
+                DataTypeKey: type,
                 CarTypeKey: "1"
         ]
     }
+    
+    
+    static func obtainMeAndFriendPairParams(_ type: String) -> [[String : String]] {
+        var meAndFriednParams:[[String : String]] = []
+        
+        let accountInfo: FDAcountInfo = FDAcountInfo.unarchive(FDAcountInfo.lastLoginAccout()!)!
+        //添加自己
+        if let imeis = accountInfo.imeis {
+            if imeis.count > 0 {
+                let meParams = [AccountKey: FDAcountInfo.lastLoginAccout()!,
+                                ImeiKey: imeis[0],
+                                DataTypeKey: type,
+                                CarTypeKey: "1",
+                                LocationCountKey: "1"
+                ]
+                meAndFriednParams.append(meParams)
+            }
+        }
+        guard let meFriends = accountInfo.friends  else {
+            return meAndFriednParams
+        }
+        
+        for friendModel in meFriends {
+            let dict = friendModel.iotLocationParams(type)
+            if let params = dict {
+                meAndFriednParams.append(params)
+            }
+        }
+        return meAndFriednParams
+    }
+    
 }

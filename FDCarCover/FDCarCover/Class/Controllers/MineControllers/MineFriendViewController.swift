@@ -116,6 +116,7 @@ extension MineFriendViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell?.textLabel?.text = model.nick ?? model.account
         cell?.detailTextLabel?.text = (model.addstate == "3" && model.friendagree == "1" && model.meagree == "1") ? "你可以接受好友的車罩資訊" : "你當前不能接受好友的車罩資訊"
+        cell?.detailTextLabel?.adjustsFontSizeToFitWidth = true
         let label = cell?.accessoryView as! UILabel
         if model.addstate == "3" {
             label.text = "已添加"
