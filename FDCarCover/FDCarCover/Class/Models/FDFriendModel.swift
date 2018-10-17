@@ -35,14 +35,15 @@ class FDFriendModel: NSObject {
 //        self.setValuesForKeys(dictionary)
     }
 
-    func dictionary() -> [String : String] {
+    func dictionary() -> [String : Any] {
         return [
             AccountKey: account ?? "",
             NickKey: nick ?? "",
             FriendAddStateKey: addstate ?? "",
             "friendagree": friendagree ?? "",
             "meagree": meagree ?? "",
-            "mesend": mesend ?? ""
+            "mesend": mesend ?? "",
+            ImeisKey: imeis ?? [],
         ]
     }
     

@@ -10,12 +10,20 @@ import UIKit
 
 class MineNickViewController: UIViewController {
 
+    @IBOutlet weak var topConstraints: NSLayoutConstraint!
+    
+    
     @IBOutlet weak var nickTextField: UITextField!
     let accountInfo: FDAcountInfo = FDAcountInfo.unarchive(FDAcountInfo.lastLoginAccout()!)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "昵稱"
+        if #available(iOS 11.0, *) {
+            
+        }else {
+            topConstraints.constant = 70
+        }
         nickTextField.text = accountInfo.nick
     }
     

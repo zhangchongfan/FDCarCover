@@ -20,7 +20,7 @@ class FDUpdateProfile: NSObject {
     }
     
     static func getInfoParams() -> [String : Any] {
-        return [AccountKey: FDAcountInfo.lastLoginAccout() ?? "", CarTypeKey: "1"]
+        return [AccountKey: FDAcountInfo.lastLoginAccout()!, CarTypeKey: "1"]
     }
     
     static func handleProfileResult(_ responser: [AnyHashable : Any]?) {

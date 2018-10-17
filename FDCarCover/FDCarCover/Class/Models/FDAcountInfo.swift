@@ -52,7 +52,7 @@ class FDAcountInfo: NSObject, NSCoding {
             self.nick = FDAcountInfo.lastLoginAccout()
         }
         
-        let friendArray: [[String : String]] = (aDecoder.decodeObject(forKey: "friends") as? [[String : String]]) ?? []
+        let friendArray: [[String : Any]] = (aDecoder.decodeObject(forKey: "friends") as? [[String : Any]]) ?? []
         var friendModels: [FDFriendModel] = []
         for dict in friendArray {
             friendModels.append(FDFriendModel(dict))
@@ -67,7 +67,7 @@ class FDAcountInfo: NSObject, NSCoding {
         aCoder.encode(self.accessToken, forKey: "accessToken")
         aCoder.encode(self.nick, forKey: "nick")
         
-        var friendArray: [[String : String]] = []
+        var friendArray: [[String : Any]] = []
         for friendModel in self.friends ?? [] {
             friendArray
                 .append(friendModel.dictionary())

@@ -10,6 +10,8 @@ import UIKit
 
 class MineImeiViewController: MineBaseViewController {
 
+    @IBOutlet weak var topContraint: NSLayoutConstraint!
+    
     @IBOutlet weak var imeiTextField: UITextField!
     @IBOutlet weak var pairBtn: UIButton!
     @IBOutlet weak var unpairBtn: UIButton!
@@ -19,6 +21,11 @@ class MineImeiViewController: MineBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "IMEI碼設定"
+        if #available(iOS 11.0, *) {
+            
+        }else {
+            topContraint.constant = 70
+        }
         let imeis = self.accountInfo.imeis ?? []
         if imeis.count == 0 {
             unpairBtn.isHidden = true

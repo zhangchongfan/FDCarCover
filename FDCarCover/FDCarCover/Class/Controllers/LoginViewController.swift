@@ -53,22 +53,22 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
-//        if UIScreen.main.bounds.size.width == 320 {//调试
-//            guard let serverManager = FDServerManager.share() else {
-//                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
-//                return
-//            }
-//            
-//            let params = [
-//                "imei":"123456789123456","sim":"0952010210","time":"20180910073950","longitude":"113.86522218","latitude":"22.57428872","iotstate":"2","type":"1"
-//            ]
-//            serverManager.updateLocation(withParams: params, success: {[weak self] (response) in
-//                MBProgressHUD.fd_show(withText: "更新位置成功", mode: .text, add: self?.view)
-//            }, failre: {[weak self] in
-//                MBProgressHUD.fd_show(withText: "更新位置失败", mode: .text, add: self?.view)
-//            })
-//            return
-//        }
+        if UIScreen.main.bounds.size.width == 320 {//调试
+            guard let serverManager = FDServerManager.share() else {
+                MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
+                return
+            }
+            let time = arc4random_uniform(20180910)
+            let params = [
+                "imei":"123456789012345","sim":"0952010210","time":"\(time)","longitude":"113.86522218","latitude":"22.57428872","iotstate":"2","type":"1"
+            ]
+            serverManager.updateLocation(withParams: params, success: {[weak self] (response) in
+                MBProgressHUD.fd_show(withText: "更新位置成功", mode: .text, add: self?.view)
+            }, failre: {[weak self] in
+                MBProgressHUD.fd_show(withText: "更新位置失败", mode: .text, add: self?.view)
+            })
+            return
+        }
         if accountAndPasswordFormatCorrect() {
             guard let serverManager = FDServerManager.share() else {
                 MBProgressHUD.fd_show(withText: "網絡异常，請檢查", mode: .text, add: view)
