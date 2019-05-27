@@ -99,7 +99,7 @@ class MapRouteView: UIView {
         let desLocation = destinationLocation(locationDict: destination!)
         //  添加一个大头针
         //  创建一个大头针模型
-        let anni = FDAnnotation(coordinate: desLocation.coordinate, title: "停车位置", subtitle: "")
+        let anni = FDAnnotation(coordinate: desLocation.coordinate, title: "停車位置", subtitle: "")
         //  将大头针添加到地图
         mapView?.addAnnotation(anni)
         updateMapCenter(coordinate: destinationLocation(locationDict: destination!).coordinate)

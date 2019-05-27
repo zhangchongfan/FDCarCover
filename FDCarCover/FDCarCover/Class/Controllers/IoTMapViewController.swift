@@ -43,7 +43,11 @@ class IoTMapViewController: UIViewController {
     }
     
     @objc func rightNaviItemAction() {
-        MapTool.shared().navigationAction(with: (mapRouteView?.destinationLocation(locationDict: destinationDict!).coordinate)!, withENDName: "位置", tager: self)
+        if mapRouteView?.destination == nil {
+            MBProgressHUD.fd_show(withText: "沒有數據", mode: .text, add: view)
+        }else {
+            MapTool.shared().navigationAction(with: (mapRouteView?.destinationLocation(locationDict: (mapRouteView?.destination)!).coordinate)!, withENDName: "位置", tager: self)
+        }
     }
     
     func setMapViewControllerUI() {
@@ -107,9 +111,13 @@ extension IoTMapViewController: UIActionSheetDelegate {
         }
         
         if actionSheet.tag == 0 {
-            mapRouteView?.startPlanningRoute(mode: buttonIndex == 0 ? .walk : .drive, result: {
-                
-            })
+            if mapRouteView?.destination == nil {
+                MBProgressHUD.fd_show(withText: "沒有數據", mode: .text, add: view)
+            }else {
+                mapRouteView?.startPlanningRoute(mode: buttonIndex == 0 ? .walk : .drive, result: {
+                    
+                })
+            }
         }else if actionSheet.tag == 1 {
             
         }
@@ -169,6 +177,7 @@ extension IoTMapViewController {
                 hud?.labelText = "獲取數據成功"
                 let locationInfo = FDLocationInfo(loacationInfo: informations[0])
                 let location = CLLocation(latitude: locationInfo.latitude ?? 0.0, longitude: locationInfo.longitude ?? 0.0)
+                //22.574337764639846 113.86520047857351
                 let chinaCoordinate = VPLocationConverter.wgs84(toGcj02: location.coordinate)
                 mapRouteView?.destination = [Latitude: chinaCoordinate.latitude,Longitude: chinaCoordinate.longitude]
             }else {

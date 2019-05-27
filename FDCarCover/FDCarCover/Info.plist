@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2</string>
+	<string>2.3</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -35,11 +35,11 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>""</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>用来记录车罩放下时，您停车的位置</string>
+	<string>用來記錄車罩放下時，您停車的位置</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>用来记录车罩放下时，您停车的位置</string>
+	<string>用來記錄車罩放下時，您停車的位置</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>用来记录车罩放下时，您停车的位置</string>
+	<string>用來記錄車罩放下時，您停車的位置</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
